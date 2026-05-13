@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary identity -->
+<title>Thabang Livington Mokotedi — ERP Support & Software Developer | Pretoria</title>
+<meta name="description" content="Thabang Livington Mokotedi — ERP support intern and software developer based in Pretoria, South Africa. Equity Partner at NexMotion Technologies. Builder of BidCalc. CUT graduate, Cum Laude.">
+<meta name="author" content="Thabang Livington Mokotedi">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://thabangmokotedi.netlify.app/">
+
+<!-- Open Graph (for link previews and Google entity signals) -->
+<meta property="og:type"        content="profile">
+<meta property="og:title"       content="Thabang Livington Mokotedi — Software Developer & ERP Support">
+<meta property="og:description" content="ERP support intern and software developer based in Pretoria, South Africa. Builder of BidCalc. Equity Partner at NexMotion Technologies.">
+<meta property="og:url"         content="https://thabangmokotedi.netlify.app/">
+<meta property="og:image"       content="https://thabangmokotedi.netlify.app/Thabang Pro.jpg">
+<meta property="og:locale"      content="en_ZA">
+<meta property="profile:first_name" content="Thabang">
+<meta property="profile:last_name"  content="Mokotedi">
+
+<!-- Twitter/X card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Thabang Livington Mokotedi — Software Developer">
+<meta name="twitter:description" content="ERP support intern and software developer. Builder of BidCalc. Based in Pretoria, South Africa.">
+<meta name="twitter:image"       content="https://thabangmokotedi.netlify.app/Thabang Pro.jpg">
+
+<!-- JSON-LD Person schema — this is what creates a Google Knowledge Panel -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Thabang Livington Mokotedi",
+  "alternateName": ["Thabang Mokotedi", "Livington Mokotedi", "T.L. Mokotedi"],
+  "jobTitle": "ERP Support Intern & Software Developer",
+  "description": "Software developer and ERP support intern based in Pretoria, South Africa. Equity Partner and Head of Product Engineering at NexMotion Technologies. Builder of BidCalc, a Progressive Web App for South African car auction buyers.",
+  "url": "https://thabangmokotedi.netlify.app",
+  "image": "https://thabangmokotedi.netlify.app/Thabang Pro.jpg",
+  "email": "thabangmokotedi38@gmail.com",
+  "telephone": "+27680853688",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pretoria",
+    "addressRegion": "Gauteng",
+    "addressCountry": "ZA"
+  },
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Central University of Technology, Free State"
+  },
+  "knowsAbout": ["ERP Systems", "Software Development", "Flutter", "C#", "ASP.NET", "React", "Firebase", "Progressive Web Apps"],
+  "sameAs": [
+    "https://www.linkedin.com/in/thabang-mokotedi/",
+    "https://github.com/ThabangMokotedI",
+    "https://nexmotiontechnologies.co.za",
+    "https://bidcalculator.co.za"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --mint:    #059669;
+  --mint-2:  #10B981;
+  --mint-3:  #34D399;
+  --mint-bg: #ECFDF5;
+  --mint-xl: #F0FDF4;
+  --slate:   #0D1B2A;
+  --slate-2: #1E293B;
+  --muted:   #64748B;
+  --border:  #E2E8F0;
+  --bg:      #F8FFFC;
+  --white:   #FFFFFF;
+  --tag-bg:  #D1FAE5;
+  --tag-fg:  #065F46;
+  --f:       'Fraunces',Georgia,serif;
+  --s:       'DM Sans',system-ui,sans-serif;
+  --max:     1100px;
+  --pad:     clamp(18px,5vw,52px);
+}
+body{font-family:var(--s);background:var(--bg);color:var(--slate-2);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-wrap:break-word;word-break:break-word}
+
+/* ── CANVAS ── */
+#three-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;background:rgba(248,255,252,.93);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(5,150,105,.12);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad)}
+.logo{font-family:var(--f);font-size:22px;font-weight:600;color:var(--slate);text-decoration:none;letter-spacing:-.5px;display:flex;align-items:center;gap:2px}
+.logo-dot{color:var(--mint);font-size:26px;line-height:1}
+.nav-ul{display:flex;gap:6px;list-style:none;align-items:center}
+.nav-ul a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;padding:5px 11px;border-radius:6px;transition:all .15s;display:flex;align-items:center;gap:5px}
+.nav-ul a:hover{color:var(--slate);background:var(--mint-bg)}
+.nav-ul a svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-hire{background:var(--slate)!important;color:var(--white)!important;padding:6px 16px!important;border-radius:7px!important}
+.nav-hire:hover{background:var(--mint)!important}
+
+/* ── WRAP ── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad);position:relative;z-index:10}
+
+/* ── HERO ── */
+#hero{padding:clamp(96px,13vw,132px) 0 72px;border-bottom:1px solid var(--border)}
+.hero-grid{display:grid;grid-template-columns:1fr 340px;gap:52px;align-items:center}
+.avail{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;color:var(--mint);letter-spacing:.8px;text-transform:uppercase;margin-bottom:22px}
+.avail-dot{width:7px;height:7px;background:var(--mint);border-radius:50%;animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.4}}
+h1{font-family:var(--f);font-size:clamp(34px,5vw,58px);font-weight:400;line-height:1.06;letter-spacing:-1.5px;color:var(--slate);margin-bottom:20px}
+h1 em{font-style:italic;color:var(--mint)}
+.hero-bio{font-size:15.5px;color:var(--muted);max-width:520px;line-height:1.78;margin-bottom:34px}
+.hero-bio strong{color:var(--slate-2);font-weight:600}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;font-size:13px;font-weight:600;font-family:var(--s);border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:all .18s}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.btn-dark{background:var(--slate);color:#fff}
+.btn-dark:hover{background:var(--mint);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--slate-2);border:1.5px solid var(--border)}
+.btn-ghost:hover{border-color:var(--mint);color:var(--mint);transform:translateY(-1px)}
+
+.hero-stats{display:flex;gap:32px}
+.stat-num{font-family:var(--f);font-size:38px;font-weight:600;color:var(--slate);line-height:1;display:block}
+.stat-label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.7px;text-transform:uppercase;margin-top:3px;display:block}
+
+/* ── PHOTO STACK ── */
+.photo-stack{position:relative;height:420px;width:100%;perspective:800px}
+.photo-frame{
+  position:absolute;border-radius:18px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(5,150,105,.12),0 4px 16px rgba(0,0,0,.08);
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s;
+  cursor:pointer;
+}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.pf1{width:220px;height:290px;top:20px;left:20px;transform:rotate(-3deg);z-index:3}
+.pf2{width:190px;height:255px;top:50px;right:10px;transform:rotate(2.5deg);z-index:2;filter:brightness(.96)}
+.pf3{width:160px;height:210px;bottom:10px;left:50%;transform:translateX(-50%) rotate(1deg);z-index:1;filter:brightness(.92)}
+.photo-frame:hover{transform:rotate(0deg) scale(1.04) translateZ(30px);z-index:10;box-shadow:0 32px 80px rgba(5,150,105,.2),0 8px 24px rgba(0,0,0,.12)}
+.pf1:hover{transform:rotate(0deg) scale(1.04) translateZ(30px)}
+.pf2:hover{transform:rotate(0deg) scale(1.04) translateZ(30px)}
+.pf3:hover{transform:translateX(-50%) rotate(0deg) scale(1.04) translateZ(30px)}
+.photo-badge{
+  position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);
+  background:var(--slate);color:#fff;font-size:11px;font-weight:700;
+  padding:5px 12px;border-radius:20px;white-space:nowrap;letter-spacing:.3px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15)
+}
+
+/* ── SECTION BASE ── */
+section{padding:clamp(56px,8vw,88px) 0;border-bottom:1px solid var(--border);position:relative;z-index:10}
+.sec-eyebrow{font-size:10.5px;font-weight:700;color:var(--mint);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sec-eyebrow svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sec-title{font-family:var(--f);font-weight:400;font-size:clamp(24px,3vw,34px);color:var(--slate);letter-spacing:-.5px;margin-bottom:52px;line-height:1.18}
+
+/* ── EXPERIENCE ── */
+.exp-item{display:grid;grid-template-columns:210px 1fr;gap:0 52px;padding:36px 0;border-top:1px solid var(--border)}
+.exp-item:first-child{border-top:none;padding-top:0}
+.exp-date{font-size:12px;font-weight:500;color:var(--muted);margin-bottom:5px}
+.exp-org{font-size:13px;font-weight:700;color:var(--mint);margin-bottom:3px}
+.exp-loc{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.exp-loc svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.badge{display:inline-flex;align-items:center;gap:4px;margin-top:8px;background:var(--mint-bg);color:var(--mint);font-size:10px;font-weight:700;letter-spacing:.5px;padding:3px 8px;border-radius:4px;text-transform:uppercase}
+.badge::before{content:'';width:5px;height:5px;background:var(--mint);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+.exp-role{font-family:var(--f);font-weight:400;font-style:italic;font-size:21px;color:var(--slate);margin-bottom:6px;line-height:1.2}
+.exp-ctx{font-size:12.5px;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.exp-ctx svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0}
+.exp-ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.exp-ul li{font-size:13.5px;color:var(--slate-2);padding-left:20px;position:relative;line-height:1.65}
+.exp-ul li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--mint-bg);border:1.5px solid var(--mint);border-radius:50%}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.tag{font-size:11px;font-weight:500;color:var(--tag-fg);background:var(--tag-bg);border:1px solid #A7F3D0;padding:3px 9px;border-radius:5px}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{
+  background:var(--white);border:1px solid var(--border);border-radius:16px;
+  overflow:hidden;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s,border-color .2s;
+  transform-style:preserve-3d;
+}
+.card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 24px 64px rgba(5,150,105,.11),0 4px 16px rgba(0,0,0,.06);border-color:var(--mint-3)}
+.card-thumb{height:200px;overflow:hidden;background:#f0f4f8;position:relative}
+.card-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s ease}
+.card:hover .card-thumb img{transform:scale(1.04)}
+.card-thumb-multi{display:grid;grid-template-columns:repeat(3,1fr);height:100%;gap:2px;background:var(--slate)}
+.card-thumb-multi img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s}
+.card:hover .card-thumb-multi img{transform:scale(1.05)}
+.card-thumb-mock{height:100%;display:flex;align-items:center;justify-content:center;padding:20px}
+.card-body{padding:24px}
+.card-eyebrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.card-kind{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--mint);display:flex;align-items:center;gap:5px}
+.card-kind svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.card-link{font-size:11.5px;font-weight:700;color:var(--mint);text-decoration:none;display:flex;align-items:center;gap:4px;padding:4px 10px;border:1.5px solid var(--mint);border-radius:6px;transition:all .15s}
+.card-link:hover{background:var(--mint);color:#fff}
+.card-link svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card-title{font-family:var(--f);font-weight:400;font-size:18px;color:var(--slate);margin-bottom:8px;line-height:1.25}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.68}
+.card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;border-color:#A7F3D0;background:var(--mint-xl)}
+.card.featured .card-thumb{height:100%;min-height:240px}
+.feat-ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.feat-ul li{font-size:12.5px;color:var(--slate-2);padding-left:16px;position:relative;line-height:1.6}
+.feat-ul li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--mint-2);border-radius:50%}
+
+/* BidCalc mock */
+.bidcalc-mock{width:100%;max-width:220px;background:#fff;border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.14);overflow:hidden;font-family:var(--s)}
+.bm-header{background:var(--slate);padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+.bm-title{color:#fff;font-size:11px;font-weight:700}
+.bm-dots{display:flex;gap:4px}
+.bm-dot{width:7px;height:7px;border-radius:50%;opacity:.6}
+.bm-body{padding:12px 14px}
+.bm-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #f0f0f0;font-size:10px}
+.bm-row:last-child{border:none}
+.bm-label{color:#64748B;font-weight:500}
+.bm-val{color:var(--slate);font-weight:700}
+.bm-total{background:var(--mint-bg);border-radius:8px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.bm-t-label{font-size:9px;font-weight:700;color:var(--mint);text-transform:uppercase;letter-spacing:.5px}
+.bm-t-val{font-size:14px;font-weight:700;color:var(--mint)}
+.bm-btn{width:100%;background:var(--slate);color:#fff;border:none;border-radius:7px;padding:7px;font-size:10px;font-weight:700;margin-top:8px;cursor:pointer;letter-spacing:.3px}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.sg{padding:26px 40px 26px 0;border-bottom:1px solid var(--border)}
+.sg:nth-child(even){padding:26px 0 26px 40px;border-left:1px solid var(--border)}
+.sg:nth-last-child(-n+2){border-bottom:none}
+.sg-head{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.sg-icon{width:30px;height:30px;border-radius:8px;background:var(--mint-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sg-icon svg{width:15px;height:15px;stroke:var(--mint);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sg-name{font-size:10.5px;font-weight:700;color:var(--mint);letter-spacing:.9px;text-transform:uppercase}
+.pill-row{display:flex;flex-wrap:wrap;gap:7px}
+.pill{font-size:12px;color:var(--slate-2);background:var(--white);border:1px solid var(--border);padding:4px 12px;border-radius:20px;transition:all .15s}
+.pill:hover{border-color:var(--mint);color:var(--mint);background:var(--mint-bg)}
+.pill.hi{background:var(--tag-bg);color:var(--tag-fg);border-color:#6EE7B7;font-weight:600}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.about-txt{font-size:15px;color:var(--slate-2);line-height:1.8}
+.about-txt p{margin-bottom:18px}
+.about-txt strong{color:var(--slate);font-weight:700}
+blockquote{border-left:3px solid var(--mint-2);padding:14px 20px;margin:24px 0;background:var(--mint-xl);border-radius:0 10px 10px 0}
+blockquote p{font-style:italic;color:var(--muted);font-size:13.5px;line-height:1.7;margin:0}
+blockquote cite{display:block;margin-top:10px;font-size:12px;font-style:normal;color:var(--mint);font-weight:700}
+
+.edu-stack{display:flex;flex-direction:column;gap:16px}
+.edu-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:18px 20px;transition:border-color .2s}
+.edu-card:hover{border-color:var(--mint-3)}
+.edu-deg{font-weight:700;color:var(--slate);font-size:14.5px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.edu-deg svg{width:14px;height:14px;stroke:var(--mint);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.edu-school{font-size:13px;color:var(--mint);font-weight:600;margin-bottom:4px}
+.edu-det{font-size:12.5px;color:var(--muted);line-height:1.55}
+.certs-head{font-size:10.5px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin:24px 0 12px}
+.dist-bar-wrap{margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.dist-bar{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;font-size:11.5px}
+.dist-label{color:var(--muted);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dist-score{font-family:"DM Sans",sans-serif;font-weight:700;color:var(--mint);font-size:12px;white-space:nowrap}
+.dist-track{grid-column:1/-1;height:4px;background:#E2E8F0;border-radius:2px;overflow:hidden}
+.dist-fill{height:100%;background:linear-gradient(90deg,var(--mint-2),var(--mint-3));border-radius:2px;width:0;transition:width 1s cubic-bezier(.22,1,.36,1) var(--delay,0s)}
+.dist-fill.bar-in{width:var(--w)}
+.cert-item{
+  font-size:13px;color:var(--slate-2);padding:10px 12px;border-top:none;
+  display:flex;align-items:center;gap:10px;border-radius:8px;margin-bottom:6px;
+  opacity:0;transform:translateX(-10px) scale(0.98);
+  transition:opacity .45s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1),background .15s;
+}
+.cert-item.cert-in{opacity:1;transform:translateX(0) scale(1)}
+.cert-item:nth-child(odd){background:#F8FFFC;border:1px solid #D1FAE5}
+.cert-item:nth-child(even){background:#FFFFFF;border:1px solid #E2E8F0}
+.cert-item:hover{background:var(--mint-bg);border-color:#6EE7B7;color:var(--mint)}
+.cert-item svg{flex-shrink:0}
+.cert-item svg{width:13px;height:13px;stroke:var(--mint);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ── CONTACT ── */
+#contact{background:var(--slate);padding:clamp(64px,10vw,100px) var(--pad);border-bottom:none;z-index:10;position:relative}
+.contact-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.c-eye{font-size:10.5px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:12px}
+.c-h{font-family:var(--f);font-weight:400;font-size:clamp(28px,4vw,44px);color:#fff;letter-spacing:-.6px;margin-bottom:16px;line-height:1.1}
+.c-h em{font-style:italic;color:var(--mint-3)}
+.c-sub{font-size:14px;color:rgba(255,255,255,.5);line-height:1.72;max-width:380px}
+.clinks{display:flex;flex-direction:column;gap:10px}
+.clink{display:flex;align-items:center;gap:14px;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;padding:12px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);transition:all .2s}
+.clink:hover{color:#fff;border-color:var(--mint-3);background:rgba(16,185,129,.08)}
+.clink-ico{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.clink-ico svg{width:16px;height:16px;stroke:var(--mint-3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.clink-label{font-size:10px;color:rgba(255,255,255,.35);font-weight:600;letter-spacing:.5px;text-transform:uppercase;display:block;margin-bottom:1px}
+.clink-val{display:block}
+
+/* ── FOOTER ── */
+footer{padding:20px var(--pad);display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);position:relative;z-index:10}
+.fc{font-size:12px;color:var(--muted)}
+.fl{display:flex;gap:20px}
+.fl a{font-size:12px;color:var(--muted);text-decoration:none;transition:color .15s}
+.fl a:hover{color:var(--mint)}
+
+/* ── FADE ANIM ── */
+.fade{opacity:0;transform:translateY(10px) scale(0.97);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+.fade.in{opacity:1;transform:translateY(0) scale(1)}
+.fade-r{opacity:0;transform:translateX(20px) scale(0.97);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.fade-r.in{opacity:1;transform:translateX(0) scale(1)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;}.photo-stack{height:280px;margin-top:20px}
+  .proj-grid{grid-template-columns:1fr}.card.featured{grid-template-columns:1fr}
+  .card.featured .card-thumb{height:220px}
+  .skills-grid{grid-template-columns:1fr}
+  .sg:nth-child(even){padding:26px 0;border-left:none}
+  .sg:nth-last-child(-n+2){border-bottom:1px solid var(--border)}
+  .sg:last-child{border-bottom:none}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .contact-inner{grid-template-columns:1fr;gap:40px}
+  .exp-item{grid-template-columns:1fr;gap:8px}
+  .exp-meta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:baseline}
+  nav{padding:0 18px}
+  .wrap{padding:0 18px}
+}
+@media(max-width:480px){
+  .nav-ul li:not(:last-child){display:none}
+  .photo-stack{height:220px;margin-top:12px}
+  .pf1{width:160px;height:210px;top:10px;left:10px;transform:rotate(-2deg);z-index:3}
+  .pf2{width:140px;height:180px;top:40px;right:8px;transform:rotate(1.5deg);z-index:2;filter:brightness(.98)}
+  .pf3{width:130px;height:170px;bottom:8px;left:50%;transform:translateX(-50%) rotate(1deg);z-index:1;filter:brightness(.95)}
+  h1{font-size:28px}
+  .hero-bio{font-size:14px;max-width:100%}
+  #hero{padding:48px 0 36px}
+  nav{height:52px;padding:0 12px}
+  .cta-row{gap:8px}
+  .hero-grid{grid-template-columns:1fr}
+  #three-canvas{display:none}
+  /* Prevent any content from punching through the viewport */
+  .hero-bio,.exp-ul li,.card-desc,.about-txt p,.sg,.hiw-body,.clink-val{
+    overflow-wrap:break-word;word-break:break-word
+  }
+  .hero-stats{flex-wrap:wrap;gap:20px}
+  .stat-num{font-size:28px}
+  .cta-row .btn{font-size:12px;padding:9px 14px}
+  .sec-title{font-size:22px;margin-bottom:32px}
+  .card-body{padding:16px}
+  .exp-ul li{font-size:13px}
+  .tag{font-size:10px}
+  .pill{font-size:11px}
+  .hiw-grid{grid-template-columns:1fr}
+}
+@media(max-width:380px){
+  h1{font-size:24px;letter-spacing:-1px}
+  .hero-bio{font-size:13.5px}
+  .wrap{padding:0 14px}
+  nav{padding:0 10px}
+  .logo{font-size:18px}
+  .stat-num{font-size:24px}
+  .avail{font-size:10.5px}
+  .exp-role{font-size:18px}
+}
+
+/* ── HOW I WORK ─────────────────────────────────────────────────────────────── */
+.hiw-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:16px;
+}
+.hiw-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:24px 22px;
+  transition:border-color .2s, box-shadow .2s, transform .2s;
+}
+.hiw-card:hover{
+  border-color:var(--mint-2);
+  box-shadow:0 8px 28px rgba(16,185,129,.09);
+  transform:translateY(-3px);
+}
+.hiw-icon{
+  width:38px;height:38px;
+  border-radius:10px;
+  background:var(--mint-bg);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:14px;
+  flex-shrink:0;
+}
+.hiw-icon svg{
+  width:17px;height:17px;
+  stroke:var(--mint);fill:none;
+  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
+}
+.hiw-title{
+  font-size:14px;font-weight:700;
+  color:var(--slate);margin-bottom:8px;line-height:1.3;
+}
+.hiw-body{
+  font-size:13px;color:var(--muted);line-height:1.72;margin:0;
+}
+@media(max-width:860px){
+  .hiw-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:540px){
+  .hiw-grid{grid-template-columns:1fr;}
+}
+
+/* ── CV DOWNLOAD DROPDOWN ── */
+.btn-dl-wrap{position:relative;display:inline-flex}
+.btn-dl-main{border-radius:8px 0 0 8px!important}
+.btn-dl-arrow{
+  background:var(--slate);color:#fff;
+  border:none;border-left:1px solid rgba(255,255,255,.18);
+  border-radius:0 8px 8px 0;padding:0 11px;cursor:pointer;
+  display:flex;align-items:center;transition:background .18s;flex-shrink:0
+}
+.btn-dl-arrow:hover{background:var(--mint)}
+.btn-dl-arrow svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.btn-dl-wrap.open .btn-dl-arrow svg{transform:rotate(180deg)}
+.dl-dropdown{
+  position:absolute;top:calc(100% + 8px);left:0;
+  background:var(--white);border:1px solid var(--border);
+  border-radius:12px;box-shadow:0 16px 48px rgba(0,0,0,.13),0 4px 16px rgba(5,150,105,.07);
+  min-width:210px;z-index:300;overflow:hidden;
+  opacity:0;transform:translateY(-8px) scale(.97);
+  pointer-events:none;
+  transition:opacity .18s cubic-bezier(.22,1,.36,1),transform .18s cubic-bezier(.22,1,.36,1)
+}
+.dl-dropdown.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.dl-opt{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 16px;font-size:13px;font-weight:500;
+  color:var(--slate-2);text-decoration:none;
+  transition:background .12s,color .12s;cursor:pointer
+}
+.dl-opt:hover{background:var(--mint-bg);color:var(--mint)}
+.dl-opt svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;opacity:.7}
+.dl-opt:hover svg{opacity:1}
+.dl-opt-text{display:flex;flex-direction:column;gap:1px}
+.dl-opt-label{font-size:13px;font-weight:600;line-height:1.2}
+.dl-opt-sub{font-size:10.5px;color:var(--muted);font-weight:400}
+.dl-opt:hover .dl-opt-sub{color:var(--mint);opacity:.75}
+.dl-divider{height:1px;background:var(--border);margin:0 16px}
+
+</style>
+</head>
+<body>
+
+<canvas id="three-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#hero">TM<span class="logo-dot">.</span></a>
+  <ul class="nav-ul">
+    <li><a href="#experience">
+      <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      Experience</a></li>
+    <li><a href="#projects">
+      <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      Projects</a></li>
+    <li><a href="#skills">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      Skills</a></li>
+    <li><a href="#how-i-work"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>How I Work</a></li>
+    <li><a href="#about">
+      <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      About</a></li>
+    <li><a href="#contact" class="nav-hire">Hire Me
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="wrap">
+<section id="hero">
+  <div class="hero-grid">
+    <div class="fade">
+      <div class="avail"><div class="avail-dot"></div>Open to opportunities</div>
+      <h1>Building Systems<br>That <em>Actually Work</em></h1>
+      <p class="hero-bio">
+        Maintaining <strong>Microsoft Dynamics 365 F&amp;O</strong> for POLMED via The Naked Scientists. Builder of <strong>BidCalc</strong> — a live fintech PWA. Equity Partner &amp; Head of Product Engineering at <strong>Nexmotion Technologies</strong>. CUT graduate, Cum Laude.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-dark" href="#contact">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Let's Work Together</a>
+
+        <!-- CV Download split-button -->
+        <div class="btn-dl-wrap" id="dl-wrap">
+          <a class="btn btn-dark btn-dl-main" href="Thabang_Mokotedi_CV.pdf" download="Thabang_Mokotedi_CV.pdf">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+          <button class="btn-dl-arrow" id="dl-arrow" aria-label="More formats" aria-expanded="false">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="dl-dropdown" id="dl-dropdown" role="menu">
+            <a class="dl-opt" href="Thabang_Mokotedi_CV.pdf" download="Thabang_Mokotedi_CV.pdf" role="menuitem">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span class="dl-opt-text">
+                <span class="dl-opt-label">PDF</span>
+                <span class="dl-opt-sub">Best for recruiters · downloads instantly</span>
+              </span>
+            </a>
+            <div class="dl-divider"></div>
+            <a class="dl-opt" href="cv.html" target="_blank" rel="noopener" role="menuitem">
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="dl-opt-text">
+                <span class="dl-opt-label">View Online</span>
+                <span class="dl-opt-sub">HTML · opens in browser</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <a class="btn btn-ghost" href="https://bidcalculator.co.za" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          BidCalc</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="stat-num">10+</span><span class="stat-label">Live websites</span></div>
+        <div><span class="stat-num">7</span><span class="stat-label">ERP workstreams</span></div>
+        <div><span class="stat-num">8/10</span><span class="stat-label">Distinctions</span></div>
+        <div><span class="stat-num">Cum Laude</span><span class="stat-label">Higher Certificate</span></div>
+      </div>
+    </div>
+    <div class="fade-r" style="transition-delay:.1s">
+      <div class="photo-stack">
+        <div class="photo-frame pf1">
+          <img src="Thabang Pro.jpg" alt="Thabang Mokotedi" loading="eager">
+        </div>
+        <div class="photo-frame pf2">
+          <img src="Thabang Crowd.jpeg" alt="Thabang Mokotedi" loading="eager">
+        </div>
+        <div class="photo-frame pf3">
+          <img src="Thabang Grad.jpg" alt="Thabang graduating" loading="eager">
+          <div class="photo-badge">🎓 CUT — Cum Laude</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-eyebrow">
+    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+    Career
+  </div>
+  <div class="sec-title">Work Experience</div>
+
+  <!-- POLMED -->
+  <div class="exp-item fade">
+    <div>
+      <div class="exp-date">Apr 2026 – Present</div>
+      <div class="exp-org">The Naked Scientists → POLMED</div>
+      <div class="exp-loc">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Pretoria, South Africa
+      </div>
+      <div class="badge">Current</div>
+    </div>
+    <div>
+      <div class="exp-role">ERP Support Technician</div>
+      <div class="exp-ctx">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Microsoft Dynamics 365 Finance &amp; Operations · 7 active workstreams
+      </div>
+      <ul class="exp-ul">
+        <li>Maintain D365 F&amp;O across Finance, Procurement, Travel, CRM, Human Capital, Inventory and Contracts for POLMED — South Africa's police medical aid scheme.</li>
+        <li>Coordinate UAT for a medical aid mobile app across multiple devices; consolidate findings into structured issue trackers and change request reports.</li>
+        <li>Manage post-go-live issue register across all workstreams — logging, tracking, and resolving tickets within SLA targets.</li>
+        <li>Execute new employee onboarding end-to-end: HR form verification, D365 user creation and role assignment, sign-off documentation, and training delivery.</li>
+        <li>Process user role change requests: review signed approval forms, apply and verify role changes across environments, and document all changes in the monthly governance report.</li>
+        <li>Diagnose and resolve batch job failures via System Administration; maintain comprehensive process documentation to support triage and governance — detailed materials available on request to verified partners.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">D365 F&amp;O</span><span class="tag">UAT Coordination</span><span class="tag">Issue Register</span><span class="tag">SLA Management</span><span class="tag">User Onboarding</span><span class="tag">Monthly Reporting</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nexmotion -->
+  <div class="exp-item fade">
+    <div>
+      <div class="exp-date">Mar 2025 – Present</div>
+      <div class="exp-org">Nexmotion Technologies</div>
+      <div class="exp-loc">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Remote
+      </div>
+      <div class="badge">Current</div>
+    </div>
+    <div>
+      <div class="exp-role">Head of Product Engineering &amp; Equity Partner</div>
+      <ul class="exp-ul">
+        <li>Central product coordination node between CTO, CEO and Head of Marketing — bridging technical execution, UX design and business strategy across all client projects.</li>
+        <li>Frontend development across 10+ live production websites for clients in legal, hospitality, construction, education and nonprofit sectors.</li>
+        <li>Lead product feature scoping, visual design execution, sprint planning and client walk-in support for the Bloemfontein office.</li>
+        <li>Visual design lead across Pampiri product suite — all marketing assets, UI screens and brand output.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Product Strategy</span><span class="tag">Figma</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kinetixes -->
+  <div class="exp-item fade">
+    <div>
+      <div class="exp-date">Feb 2026 – Mar 2026</div>
+      <div class="exp-org">Kinetixes Engineering Solutions (Pty) Ltd</div>
+      <div class="exp-loc">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Bloemfontein, South Africa
+      </div>
+    </div>
+    <div>
+      <div class="exp-role">IT Intern <span style="font-family:var(--s);font-size:14px;font-style:normal;color:var(--muted)">(Volunteer)</span></div>
+      <ul class="exp-ul">
+        <li>WordPress website deployments and maintenance; Flutter + Firebase mobile app development for client projects.</li>
+        <li>Hardware diagnostics and repair — MacBook Pro motherboard-level liquid damage (diode failure diagnosis, board cleaning); printer servicing; device configuration and setup.</li>
+        <li>General IT support across the organisation: device setup, software installation, troubleshooting across Windows and macOS environments.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">Flutter</span><span class="tag">WordPress</span><span class="tag">Firebase</span><span class="tag">Hardware Repair</span><span class="tag">IT Support</span><span class="tag">Networking</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toka Primary School -->
+  <div class="exp-item fade">
+    <div>
+      <div class="exp-date">Jun 2025 – Nov 2025</div>
+      <div class="exp-org">Toka Primary School</div>
+      <div class="exp-loc">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Freedom Square, Bloemfontein
+      </div>
+    </div>
+    <div>
+      <div class="exp-role">Educator Assistant</div>
+      <ul class="exp-ul">
+        <li>Provided hands-on IT support to educators and learners — troubleshooting devices, setting up computer labs, and resolving day-to-day technical issues across Windows environments.</li>
+        <li>Developed training materials and digital literacy resources to support educators in integrating technology into classroom instruction.</li>
+        <li>Assisted with the configuration and maintenance of school hardware including desktops, projectors, and peripheral devices.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item fade">
+    <div>
+      <div class="exp-date">Jun 2024 – Dec 2024</div>
+      <div class="exp-org">Central University of Technology</div>
+    </div>
+    <div>
+      <div class="exp-role">Work Integrated Learning — Software Developer</div>
+      <ul class="exp-ul">
+        <li>Built a cross-platform appointment booking system: a Flutter + Firebase mobile app that syncs in real time with a C# / ASP.NET web application — the same architecture as WhatsApp and WhatsApp Web, where actions on one platform reflect instantly on the other.</li>
+        <li>Collaborated on an internal inventory management system using C# and SQL; resolved 40+ UI/UX issues through systematic testing.</li>
+        <li>Produced technical documentation (specs, user guides, architecture diagrams); participated in code reviews.</li>
+      </ul>
+      <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">C#</span><span class="tag">ASP.NET</span><span class="tag">SQL</span><span class="tag">Real-time Sync</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-eyebrow">
+    <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    Work
+  </div>
+  <div class="sec-title">Projects &amp; Builds</div>
+
+  <div class="proj-grid">
+
+    <!-- BidCalc featured -->
+    <div class="card featured fade">
+      <div class="card-thumb">
+        <div class="card-thumb-mock" style="background:linear-gradient(135deg,#0D1B2A 0%,#1E293B 100%)">
+          <div class="bidcalc-mock">
+            <div class="bm-header">
+              <span class="bm-title">BidCalc</span>
+              <div class="bm-dots">
+                <div class="bm-dot" style="background:#EF4444"></div>
+                <div class="bm-dot" style="background:#F59E0B"></div>
+                <div class="bm-dot" style="background:#22C55E"></div>
+              </div>
+            </div>
+            <div class="bm-body">
+              <div class="bm-row"><span class="bm-label">Bid Price</span><span class="bm-val">R 42,000</span></div>
+              <div class="bm-row"><span class="bm-label">Buyer's Commission</span><span class="bm-val">R 3,360</span></div>
+              <div class="bm-row"><span class="bm-label">VAT (15%)</span><span class="bm-val">R 6,804</span></div>
+              <div class="bm-row"><span class="bm-label">Admin Fee</span><span class="bm-val">R 500</span></div>
+              <div class="bm-total">
+                <span class="bm-t-label">All-In Total</span>
+                <span class="bm-t-val">R 52,664</span>
+              </div>
+              <button class="bm-btn">📲 Share via WhatsApp</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="card-kind">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Personal Build · Live
+          </span>
+          <a class="card-link" href="https://bidcalculator.co.za" target="_blank" rel="noopener">
+            Live ↗
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+        <div class="card-title">BidCalc — SA Car Auction Calculator</div>
+        <p class="card-desc">Progressive Web App for South African car auction buyers. Calculates maximum safe bid price with correct 15% VAT modelling verified against real Aucor invoices — a deliberate distinction from every existing calculator.</p>
+        <ul class="feat-ul">
+          <li>Installable on Android and iOS · fully offline via service worker</li>
+          <li>POPIA-compliant GA4 with consent gating · no cookie banners</li>
+          <li>Auction house presets (Aucor, Bid or Buy, M&amp;C) · calculation history · WhatsApp share</li>
+          <li>Custom SVG icon system (20+ icons) · zero framework dependencies</li>
+          <li>Full SEO stack: JSON-LD, Open Graph, sitemap, Google Search Console</li>
+        </ul>
+        <div class="tag-row" style="margin-top:14px">
+          <span class="tag">Vanilla JS</span><span class="tag">PWA / Service Worker</span><span class="tag">GA4</span><span class="tag">POPIA</span><span class="tag">JSON-LD</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pampiri / Nexmotion -->
+    <div class="card fade">
+      <div class="card-thumb">
+        <div class="card-thumb-multi">
+          <!-- SWAP: Replace these src values with your actual Pampiri screenshot filenames -->
+          <img src="Splash Land Screen.png" alt="Pampiri Home Screen">
+          <img src="Scan Display.png" alt="Pampiri Scan">
+          <img src="Export page.png" alt="Pampiri Results">
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="card-kind">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Nexmotion · Pampiri App
+          </span>
+          <a class="card-link" href="https://nexmotiontechnologies.co.za/projects.html" target="_blank" rel="noopener">
+            View ↗
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="card-title">Pampiri — Receipt Scanning App</div>
+        <p class="card-desc">Flutter mobile app that replaces WhatsApp receipt tracking for fleet operators and SMEs across South Africa. Full UI/UX design ownership — from design system definition through to pixel-perfect Flutter implementation.</p>
+        <div class="tag-row" style="margin-top:12px">
+          <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase</span><span class="tag">UI/UX Design</span><span class="tag">Design System</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Portfolio -->
+    <div class="card fade">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#F0FDF4,#D1FAE5);display:flex;align-items:center;justify-content:center">
+        <div style="text-align:center;padding:20px">
+          <div style="font-family:var(--f);font-size:28px;font-weight:600;color:var(--slate);margin-bottom:8px">10+</div>
+          <div style="font-size:11px;font-weight:700;color:var(--mint);letter-spacing:.8px;text-transform:uppercase;margin-bottom:20px">Live Production Sites</div>
+          <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
+            <span style="background:#fff;border:1px solid #A7F3D0;padding:3px 8px;border-radius:5px;font-size:10px;font-weight:600;color:var(--tag-fg)">Legal</span>
+            <span style="background:#fff;border:1px solid #A7F3D0;padding:3px 8px;border-radius:5px;font-size:10px;font-weight:600;color:var(--tag-fg)">Hospitality</span>
+            <span style="background:#fff;border:1px solid #A7F3D0;padding:3px 8px;border-radius:5px;font-size:10px;font-weight:600;color:var(--tag-fg)">Construction</span>
+            <span style="background:#fff;border:1px solid #A7F3D0;padding:3px 8px;border-radius:5px;font-size:10px;font-weight:600;color:var(--tag-fg)">NGO</span>
+            <span style="background:#fff;border:1px solid #A7F3D0;padding:3px 8px;border-radius:5px;font-size:10px;font-weight:600;color:var(--tag-fg)">Education</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="card-kind">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Professional · Client Work
+          </span>
+          <a class="card-link" href="https://nexmotiontechnologies.co.za/projects.html" target="_blank" rel="noopener">
+            Portfolio ↗
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="card-title">Nexmotion Client Portfolio</div>
+        <p class="card-desc">10+ live production websites across diverse sectors, each with specific technical requirements addressed from the ground up.</p>
+        <!-- Sector call-outs -->
+        <div style="display:flex;flex-direction:column;gap:7px;margin:12px 0">
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:9px 12px;background:var(--mint-xl);border:1px solid #A7F3D0;border-radius:8px;font-size:12.5px">
+            <svg width="14" height="14" viewBox="0 0 24 24" style="stroke:var(--mint);fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0;margin-top:1px"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <div><strong style="color:var(--slate)">Legal firm</strong> <span style="color:var(--muted)">— Built with a POPIA-compliant data intake form; structured so no client personal information is stored or transmitted without explicit consent, per SA data protection law.</span></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:9px 12px;background:#FFF8F0;border:1px solid #FDE68A;border-radius:8px;font-size:12.5px">
+            <svg width="14" height="14" viewBox="0 0 24 24" style="stroke:#D97706;fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0;margin-top:1px"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div><strong style="color:var(--slate)">Hospitality</strong> <span style="color:var(--muted)">— Integrated real-time table booking via a lightweight availability API; staff can update seat availability from a protected admin panel without touching code.</span></div>
+          </div>
+        </div>
+        <div class="tag-row" style="margin-top:6px">
+          <span class="tag">React</span><span class="tag">HTML/CSS/JS</span><span class="tag">Tailwind CSS</span><span class="tag">Firebase</span><span class="tag">POPIA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enterprise UAT -->
+    <div class="card fade">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#0D1B2A,#1E3A5F);display:flex;align-items:center;justify-content:center">
+        <div style="text-align:center;padding:24px">
+          <div style="margin-bottom:16px">
+            <svg width="48" height="48" viewBox="0 0 24 24" style="stroke:#10B981;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div style="color:#fff;font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:8px">Mobile App UAT</div>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <div style="background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);border-radius:5px;padding:4px 10px;font-size:10px;font-weight:600;color:#10B981">✓ Android — UAT Complete</div>
+            <div style="background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);border-radius:5px;padding:4px 10px;font-size:10px;font-weight:600;color:#10B981">✓ Huawei — UAT Complete</div>
+            <div style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);border-radius:5px;padding:4px 10px;font-size:10px;font-weight:600;color:#6366F1">⚙ Structured Issue Tracking</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="card-kind">
+            <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Enterprise · UAT Management
+          </span>
+        </div>
+        <div class="card-title">Medical Aid Mobile App — UAT Coordination</div>
+        <p class="card-desc">Coordinated User Acceptance Testing for a medical aid mobile app across Huawei and Android devices. Structured issue trackers, change request reports, and supporting documentation distributed to stakeholders throughout the testing lifecycle.</p>
+        <div class="tag-row" style="margin-top:12px">
+          <span class="tag">UAT</span><span class="tag">Issue Tracking</span><span class="tag">D365</span><span class="tag">Documentation</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-eyebrow">
+    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    Toolkit
+  </div>
+  <div class="sec-title">Technical Skills</div>
+  <div class="skills-grid">
+
+    <div class="sg fade">
+      <div class="sg-head">
+        <div class="sg-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="sg-name">ERP &amp; Enterprise</div>
+      </div>
+      <div class="pill-row">
+        <span class="pill hi">D365 F&amp;O</span><span class="pill hi">Security Role Management</span><span class="pill hi">Batch Job Management</span><span class="pill">Process docs (on request)</span><span class="pill">Issue Register</span><span class="pill">UAT Coordination</span><span class="pill">LCS</span><span class="pill">Azure</span>
+      </div>
+    </div>
+
+    <div class="sg fade">
+      <div class="sg-head">
+        <div class="sg-icon">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="sg-name">Core Development</div>
+      </div>
+      <div class="pill-row">
+        <span class="pill hi">C#</span><span class="pill hi">.NET Core</span><span class="pill">ASP.NET MVC</span><span class="pill">OOP</span><span class="pill">REST APIs</span><span class="pill">Entity Framework</span>
+      </div>
+    </div>
+
+    <div class="sg fade">
+      <div class="sg-head">
+        <div class="sg-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="sg-name">Frontend</div>
+      </div>
+      <div class="pill-row">
+        <span class="pill hi">JavaScript</span><span class="pill hi">React</span><span class="pill hi">Tailwind CSS</span><span class="pill">HTML5 / CSS3</span><span class="pill">Flutter / Dart</span><span class="pill">PWA / Service Worker</span>
+      </div>
+    </div>
+
+    <div class="sg fade">
+      <div class="sg-head">
+        <div class="sg-icon">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <div class="sg-name">Databases</div>
+      </div>
+      <div class="pill-row">
+        <span class="pill hi">SQL</span><span class="pill">Oracle SQL</span><span class="pill">Firebase Firestore</span><span class="pill">DB Design</span>
+      </div>
+    </div>
+
+    <div class="sg fade">
+      <div class="sg-head">
+        <div class="sg-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="sg-name">Analytics &amp; SEO</div>
+      </div>
+      <div class="pill-row">
+        <span class="pill">Google Analytics 4</span><span class="pill">Search Console</span><span class="pill">JSON-LD</span><span class="pill">Open Graph</span><span class="pill">POPIA Compliance</span>
+      </div>
+    </div>
+
+    <div class="sg fade">
+      <div class="sg-head">
+        <div class="sg-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        </div>
+        <div class="sg-name">Tools &amp; Infrastructure</div>
+      </div>
+      <div class="pill-row">
+        <span class="pill">GitHub</span><span class="pill">Visual Studio</span><span class="pill">Figma</span><span class="pill">Agile Scrum</span><span class="pill">WordPress</span><span class="pill">Linux / Ubuntu</span><span class="pill">Hardware Diagnostics</span><span class="pill">Notion</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section id="how-i-work">
+  <div class="sec-eyebrow">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+    Approach
+  </div>
+  <div class="sec-title">How I Work</div>
+
+  <div class="hiw-grid">
+
+    <div class="hiw-card fade">
+      <div class="hiw-icon">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="hiw-title">Problem first, code second</div>
+      <p class="hiw-body">I spend time understanding what actually needs to be solved before writing a single line. A well-understood problem produces better software than a well-written solution to the wrong thing.</p>
+    </div>
+
+    <div class="hiw-card fade">
+      <div class="hiw-icon">
+        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="hiw-title">Clean and maintainable over clever</div>
+      <p class="hiw-body">Code that another developer can read, understand, and extend in six months is more valuable than clever code that only makes sense today. I prioritise clarity and structure over shortcuts.</p>
+    </div>
+
+    <div class="hiw-card fade">
+      <div class="hiw-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="hiw-title">Adapts fast to new environments</div>
+      <p class="hiw-body">I entered my current D365 role with zero prior enterprise ERP exposure and became productive within weeks. I treat unfamiliar technology as a problem to be solved — not a barrier to entry.</p>
+    </div>
+
+    <div class="hiw-card fade">
+      <div class="hiw-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="hiw-title">Bridges technical and business</div>
+      <p class="hiw-body">Working across ERP support, client-facing web projects, and my own product has taught me to think in both directions — what the system needs technically, and what the user or business actually requires in practice.</p>
+    </div>
+
+    <div class="hiw-card fade">
+      <div class="hiw-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="hiw-title">Ships things that are real and usable</div>
+      <p class="hiw-body">BidCalc is live. Pampiri is live. 10+ client sites are live. I care about output that works in the real world — not just local builds and theoretical demos.</p>
+    </div>
+
+    <div class="hiw-card fade">
+      <div class="hiw-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="hiw-title">Collaborative by default</div>
+      <p class="hiw-body">As the coordination node between CTO, CEO, and marketing at NexMotion, I've learned that good software is built through clear communication across roles — not by any one person working in isolation.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-eyebrow">
+    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    Background
+  </div>
+  <div class="sec-title">About &amp; Education</div>
+  <div class="about-grid">
+    <div class="about-txt fade">
+      <!-- Snapshot cards -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px">
+        <div style="background:var(--mint-xl);border:1px solid #A7F3D0;border-radius:12px;padding:14px 16px">
+          <div style="font-size:10px;font-weight:700;color:var(--mint);letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px">Currently</div>
+          <div style="font-size:13.5px;font-weight:600;color:var(--slate);line-height:1.4">ERP Support Technician</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:3px">D365 F&amp;O · POLMED · Pretoria</div>
+        </div>
+        <div style="background:#F8FAFF;border:1px solid #DDE3F0;border-radius:12px;padding:14px 16px">
+          <div style="font-size:10px;font-weight:700;color:#6366F1;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px">Also</div>
+          <div style="font-size:13.5px;font-weight:600;color:var(--slate);line-height:1.4">Equity Partner</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:3px">Nexmotion Technologies · Head of Product Eng.</div>
+        </div>
+        <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:12px;padding:14px 16px">
+          <div style="font-size:10px;font-weight:700;color:#D97706;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px">Builder</div>
+          <div style="font-size:13.5px;font-weight:600;color:var(--slate);line-height:1.4">BidCalc — Live PWA</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:3px">bidcalculator.co.za · Zero framework dependencies</div>
+        </div>
+        <div style="background:#FFF1F2;border:1px solid #FECDD3;border-radius:12px;padding:14px 16px">
+          <div style="font-size:10px;font-weight:700;color:#E11D48;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px">Based in</div>
+          <div style="font-size:13.5px;font-weight:600;color:var(--slate);line-height:1.4">Pretoria, South Africa</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:3px">Open to full-time · remote-friendly</div>
+        </div>
+      </div>
+
+      <p>I came into my current D365 role with <strong>zero prior enterprise ERP exposure</strong>. Everything I know about Dynamics 365 Finance &amp; Operations has been built hands-on through system use, process map study and self-directed learning across 7 workstreams. That is not a weakness — that is how I work.</p>
+      <p>I am also an equity partner at <strong>Nexmotion Technologies</strong> — not an employee, a co-owner — where I head product engineering and serve as visual design lead across Pampiri and all client web projects.</p>
+
+      <blockquote>
+        <p>"Thabang has consistently demonstrated exceptional problem-solving abilities, with a deep understanding of complex programming challenges. Their communication skills are outstanding. I wholeheartedly recommend Thabang."</p>
+        <cite>— Mpho Mbele, Departmental Manager, IT · Central University of Technology</cite>
+      </blockquote>
+    </div>
+    <div class="fade" style="transition-delay:.1s">
+      <div class="edu-stack">
+        <div class="edu-card">
+          <div class="edu-deg">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Diploma in Information Technology
+          </div>
+          <div class="edu-school">Central University of Technology · Graduated Sep 2025</div>
+          <div class="edu-det" style="margin-bottom:10px">Coursework: Software Engineering · Databases · Web Content Management · Communication Networks</div>
+          <div style="font-size:10px;font-weight:700;color:var(--mint);letter-spacing:.7px;text-transform:uppercase;margin-bottom:8px">Key Distinctions</div>
+          <div class="dist-bar-wrap">
+            <div>
+              <div class="dist-bar"><span class="dist-label">Technical Programming II B</span><span class="dist-score">88%</span></div>
+              <div class="dist-track"><div class="dist-fill" style="--w:88%;--delay:0.1s"></div></div>
+            </div>
+            <div>
+              <div class="dist-bar"><span class="dist-label">Internet Programming I</span><span class="dist-score">88%</span></div>
+              <div class="dist-track"><div class="dist-fill" style="--w:88%;--delay:0.2s"></div></div>
+            </div>
+            <div>
+              <div class="dist-bar"><span class="dist-label">Software Development I</span><span class="dist-score">Distinction</span></div>
+              <div class="dist-track"><div class="dist-fill" style="--w:82%;--delay:0.3s"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-deg">
+            <svg viewBox="0 0 24 24"><path d="M12 15l-8.5 3.5L12 22l8.5-3.5L12 15z"/><path d="M3.5 8.5L12 12l8.5-3.5L12 5 3.5 8.5z"/></svg>
+            Higher Certificate in IT — <em style="color:var(--mint)">Cum Laude</em> 🏅
+          </div>
+          <div class="edu-school">Central University of Technology · 2021–2022</div>
+          <div class="edu-det" style="margin-bottom:10px">Top 10% of graduating cohort · 8 out of 10 Distinctions</div>
+          <div style="font-size:10px;font-weight:700;color:var(--mint);letter-spacing:.7px;text-transform:uppercase;margin-bottom:8px">Top Scores</div>
+          <div class="dist-bar-wrap">
+            <div>
+              <div class="dist-bar"><span class="dist-label">Information Systems IB</span><span class="dist-score">87%</span></div>
+              <div class="dist-track"><div class="dist-fill" style="--w:87%;--delay:0.15s"></div></div>
+            </div>
+            <div>
+              <div class="dist-bar"><span class="dist-label">Systems &amp; App Software (avg.)</span><span class="dist-score">85%</span></div>
+              <div class="dist-track"><div class="dist-fill" style="--w:85%;--delay:0.25s"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-deg">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+            National Senior Certificate (Matric)
+          </div>
+          <div class="edu-school">Free State · 2020</div>
+        </div>
+      </div>
+      <div class="certs-head">Certifications</div>
+      <div class="cert-item">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Digital Literacy — NEMISA / Microsoft · 2022
+      </div>
+      <div class="cert-item">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        IT Essentials: PC Hardware &amp; Software — Cisco Networking Academy · 2022
+      </div>
+      <div class="cert-item">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Information Systems IA &amp; IB — Cisco Networking Academy · 2021–2022
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="fade">
+      <div class="c-eye">Get in touch</div>
+      <div class="c-h">Open to the right<br><em>opportunity.</em></div>
+      <p class="c-sub">Available for full-time roles in software development, enterprise systems, or product engineering. I respond fast — don't hesitate to reach out directly.</p>
+    </div>
+    <div class="clinks fade" style="transition-delay:.1s">
+      <a class="clink" href="mailto:thabangmokotedi38@gmail.com">
+        <div class="clink-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="clink-text"><span class="clink-label">Email</span><span class="clink-val">thabangmokotedi38@gmail.com</span></div>
+      </a>
+      <a class="clink" href="tel:+27680853688">
+        <div class="clink-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+        <div class="clink-text"><span class="clink-label">Phone</span><span class="clink-val">068 085 3688</span></div>
+      </a>
+      <a class="clink" href="https://linkedin.com/in/thabang-mokotedi-241ab72b5" target="_blank" rel="noopener">
+        <div class="clink-ico"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div class="clink-text"><span class="clink-label">LinkedIn</span><span class="clink-val">thabang-mokotedi-241ab72b5</span></div>
+      </a>
+      <a class="clink" href="https://github.com/ThabangMokotedI" target="_blank" rel="noopener">
+        <div class="clink-ico"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+        <div class="clink-text"><span class="clink-label">GitHub</span><span class="clink-val">ThabangMokotedI</span></div>
+      </a>
+      <a class="clink" href="https://nexmotiontechnologies.co.za/projects.html" target="_blank" rel="noopener">
+        <div class="clink-ico"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        <div class="clink-text"><span class="clink-label">Company</span><span class="clink-val">Nexmotion Technologies</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fc">© 2026 Thabang Livington Mokotedi · Pretoria, South Africa</span>
+  <div class="fl">
+    <a href="https://bidcalculator.co.za" target="_blank" rel="noopener">BidCalc ↗</a>
+    <a href="https://nexmotiontechnologies.co.za" target="_blank" rel="noopener">Nexmotion ↗</a>
+    <a href="https://github.com/ThabangMokotedI" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</footer>
+
+<script>
+// ── THREE.JS 3D BACKGROUND ──────────────────────────────────────────────────
+(function(){
+  const c = document.getElementById('three-canvas');
+  const renderer = new THREE.WebGLRenderer({canvas:c,alpha:true,antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.setSize(window.innerWidth,window.innerHeight);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,200);
+  camera.position.set(0,0,50);
+
+  // Floating geometric shapes
+  const shapes = [];
+  const geo1 = new THREE.IcosahedronGeometry(1,0);
+  const geo2 = new THREE.OctahedronGeometry(1,0);
+  const geo3 = new THREE.TetrahedronGeometry(1,0);
+  const geos = [geo1,geo2,geo3];
+
+  for(let i=0;i<28;i++){
+    const mat = new THREE.MeshBasicMaterial({
+      color: i%3===0 ? 0x059669 : i%3===1 ? 0x10B981 : 0x34D399,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.12 + Math.random()*0.14
+    });
+    const mesh = new THREE.Mesh(geos[i%3].clone(), mat);
+    const r = 18 + Math.random()*28;
+    const theta = Math.random()*Math.PI*2;
+    const phi = Math.random()*Math.PI;
+    mesh.position.set(
+      r*Math.sin(phi)*Math.cos(theta),
+      r*Math.sin(phi)*Math.sin(theta)*0.6,
+      r*Math.cos(phi)*0.5 - 10
+    );
+    const s = 0.5 + Math.random()*2.5;
+    mesh.scale.setScalar(s);
+    mesh.userData = {
+      rotX: (Math.random()-.5)*0.008,
+      rotY: (Math.random()-.5)*0.008,
+      rotZ: (Math.random()-.5)*0.006,
+      baseY: mesh.position.y,
+      floatAmp: 0.3+Math.random()*0.8,
+      floatSpd: 0.3+Math.random()*0.5,
+      floatOff: Math.random()*Math.PI*2
+    };
+    scene.add(mesh);
+    shapes.push(mesh);
+  }
+
+  // Mouse parallax
+  let mx=0,my=0,tmx=0,tmy=0;
+  document.addEventListener('mousemove',e=>{
+    mx = (e.clientX/window.innerWidth-.5)*2;
+    my = (e.clientY/window.innerHeight-.5)*2;
+  });
+
+  // Scroll
+  let scrollY=0;
+  window.addEventListener('scroll',()=>{scrollY=window.scrollY;},{passive:true});
+
+  // Resize
+  window.addEventListener('resize',()=>{
+    camera.aspect=window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth,window.innerHeight);
+  });
+
+  const clock = new THREE.Clock();
+  function animate(){
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+    tmx += (mx-tmx)*0.04;
+    tmy += (my-tmy)*0.04;
+    camera.position.x = tmx*3;
+    camera.position.y = -tmy*2 - scrollY*0.006;
+    camera.lookAt(scene.position);
+    shapes.forEach(m=>{
+      const d=m.userData;
+      m.rotation.x+=d.rotX;
+      m.rotation.y+=d.rotY;
+      m.rotation.z+=d.rotZ;
+      m.position.y = d.baseY + Math.sin(t*d.floatSpd+d.floatOff)*d.floatAmp;
+    });
+    renderer.render(scene,camera);
+  }
+  animate();
+})();
+
+// ── FADE IN OBSERVER ────────────────────────────────────────────────────────
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.07});
+document.querySelectorAll('.fade,.fade-r').forEach(el=>io.observe(el));
+
+// ── 3D CARD TILT ─────────────────────────────────────────────────────────
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=((e.clientX-r.left)/r.width-.5)*16;
+    const y=-((e.clientY-r.top)/r.height-.5)*16;
+    card.style.transform=`perspective(800px) rotateY(${x}deg) rotateX(${y}deg) translateY(-6px) scale(1.01)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='';
+    card.style.transition='transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .25s,border-color .2s';
+  });
+  card.addEventListener('mouseenter',()=>{card.style.transition='none';});
+});
+
+// ── PHOTO STACK 3D TILT ───────────────────────────────────────────────────
+const stack=document.querySelector('.photo-stack');
+if(stack){
+  stack.addEventListener('mousemove',e=>{
+    const r=stack.getBoundingClientRect();
+    const x=((e.clientX-r.left)/r.width-.5)*20;
+    const y=-((e.clientY-r.top)/r.height-.5)*20;
+    stack.style.transform=`perspective(600px) rotateY(${x}deg) rotateX(${y}deg)`;
+  });
+  stack.addEventListener('mouseleave',()=>{
+    stack.style.transform='';
+    stack.style.transition='transform .5s ease';
+  });
+  stack.addEventListener('mouseenter',()=>{stack.style.transition='none';});
+}
+
+// ── CERT STAGGER ANIMATION ──────────────────────────────────────────────────
+const certObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const items = e.target.querySelectorAll('.cert-item');
+      items.forEach((item,i)=>{
+        setTimeout(()=>item.classList.add('cert-in'), i*90);
+      });
+      certObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.15});
+document.querySelectorAll('.edu-stack,.certs-head').forEach(el=>{
+  const parent = el.closest('.fade') || el.parentElement;
+  if(parent) certObs.observe(parent);
+});
+// Trigger cert items that are already in view
+setTimeout(()=>{
+  document.querySelectorAll('.cert-item').forEach((item,i)=>{
+    const r=item.getBoundingClientRect();
+    if(r.top < window.innerHeight){setTimeout(()=>item.classList.add('cert-in'),i*90);}
+  });
+},600);
+
+// ── DISTINCTION BAR ANIMATION ────────────────────────────────────────────────
+const barObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.dist-fill').forEach(b=>b.classList.add('bar-in'));
+      barObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.2});
+document.querySelectorAll('.dist-bar-wrap').forEach(w=>barObs.observe(w));
+
+// ── ACTIVE NAV SCROLLSPY ──────────────────────────────────────────────────
+const secs=document.querySelectorAll('section[id]');
+const nl=document.querySelectorAll('.nav-ul a:not(.nav-hire)');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(s.getBoundingClientRect().top<100)cur=s.id;});
+  nl.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--mint)':'';});
+},{passive:true});
+
+// ── CV DOWNLOAD DROPDOWN ─────────────────────────────────────────────────────
+(function(){
+  const wrap = document.getElementById('dl-wrap');
+  const arrow = document.getElementById('dl-arrow');
+  const dropdown = document.getElementById('dl-dropdown');
+  if(!wrap || !arrow || !dropdown) return;
+
+  function open(){
+    dropdown.classList.add('open');
+    wrap.classList.add('open');
+    arrow.setAttribute('aria-expanded','true');
+  }
+  function close(){
+    dropdown.classList.remove('open');
+    wrap.classList.remove('open');
+    arrow.setAttribute('aria-expanded','false');
+  }
+
+  arrow.addEventListener('click', e => {
+    e.stopPropagation();
+    dropdown.classList.contains('open') ? close() : open();
+  });
+
+  // Close on outside click or Escape
+  document.addEventListener('click', e => { if(!wrap.contains(e.target)) close(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
+
+  // Close after selecting an option
+  dropdown.querySelectorAll('.dl-opt').forEach(opt => {
+    opt.addEventListener('click', () => setTimeout(close, 150));
+  });
+})();
+
+</script>
+</body>
+</html>
