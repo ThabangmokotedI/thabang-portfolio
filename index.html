@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M9MCKS5C');</script>
-<!-- End Google Tag Manager -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFDQ6R36H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XYFDQ6R36H');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function initGTM() {
+    if (window.gtmLoaded) return;
+    window.gtmLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var f = document.getElementsByTagName('script')[0];
+    var j = document.createElement('script');
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-M9MCKS5C';
+    f.parentNode.insertBefore(j, f);
+  }
+  function setAnalyticsConsent(value) {
+    localStorage.setItem('analytics_consent', value);
+    if (value === 'granted') {
+      initGTM();
+    }
+  }
+  var analyticsConsent = localStorage.getItem('analytics_consent');
+  if (analyticsConsent === 'granted') {
+    initGTM();
+  }
+</script>
+<!-- Google Tag Manager -->
+<!-- End Google Tag Manager -->
 
 <!-- Primary identity -->
 <title>Thabang Livington Mokotedi — ERP Support & Software Developer | Pretoria</title>
@@ -55,7 +65,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "url": "https://thabangmokotedi.netlify.app",
   "image": "https://thabangmokotedi.netlify.app/Thabang Pro.jpg",
   "email": "thabangmokotedi38@gmail.com",
-  "telephone": "+27680853688",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Pretoria",
@@ -105,6 +114,19 @@ body{font-family:var(--s);background:var(--bg);color:var(--slate-2);font-size:15
 
 /* ── CANVAS ── */
 #three-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55}
+#cookie-consent-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:18px clamp(18px,2vw,32px);background:#0D1B2A;color:#fff;font-size:13px}
+#cookie-consent-banner p{margin:0;max-width:calc(100% - 220px);line-height:1.6}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie-btn{border:1px solid rgba(255,255,255,.65);background:transparent;color:#fff;padding:10px 18px;border-radius:8px;font-weight:600;cursor:pointer}
+.cookie-accept{background:var(--mint);border-color:var(--mint);color:#fff}
+.cookie-decline{background:transparent}
+#privacy-policy-page{display:none;padding:clamp(80px,10vw,96px) var(--pad);max-width:var(--max);margin:0 auto}
+body.privacy-active #main-page{display:none}
+body.privacy-active #privacy-policy-page{display:block}
+#privacy-policy-page a{color:var(--mint)}
+#privacy-policy-page h1{margin-bottom:18px;font-size:clamp(30px,4vw,42px)}
+#privacy-policy-page h2{margin-top:28px;margin-bottom:12px;font-size:18px}
+#privacy-policy-page ul{margin:0 0 18px 20px;line-height:1.7}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;background:rgba(248,255,252,.93);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(5,150,105,.12);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad)}
@@ -455,9 +477,36 @@ footer{padding:20px var(--pad);display:flex;justify-content:space-between;align-
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9MCKS5C"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9MCKS5C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<div id="cookie-consent-banner" role="dialog" aria-label="Cookie consent">
+  <p>This site uses Google Analytics to understand visitor behaviour. No personal data is sold or shared. You can opt out at any time.</p>
+  <div class="cookie-actions">
+    <button id="cookie-accept" class="cookie-btn cookie-accept" type="button">Accept</button>
+    <button id="cookie-decline" class="cookie-btn cookie-decline" type="button">Decline</button>
+  </div>
+</div>
+<div id="privacy-policy-page">
+  <div class="wrap">
+    <h1>Privacy Policy</h1>
+    <p>This portfolio uses Google Analytics to measure usage and improve the site while respecting your privacy.</p>
+    <h2>What data is collected</h2>
+    <ul>
+      <li>Page views and clicks</li>
+      <li>Device type and browser details</li>
+      <li>Approximate location via Google Analytics</li>
+    </ul>
+    <h2>How data is processed</h2>
+    <p>Data is processed by Google Analytics on behalf of this site operator. Google LLC, USA receives the data and cross-border transfer is disclosed.</p>
+    <p>IP addresses are anonymised before storage and no data is sold to third parties.</p>
+    <h2>Retention period</h2>
+    <p>Collected analytics data is retained for 2 months in Google Analytics.</p>
+    <h2>Opt-out</h2>
+    <p>You can opt out at any time using browser settings or the Google Analytics opt-out tool: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">https://tools.google.com/dlpage/gaoptout</a>.</p>
+    <p>For data requests, contact <a href="mailto:thabangmokotedi38@gmail.com">thabangmokotedi38@gmail.com</a>.</p>
+  </div>
+</div>
+<div id="main-page">
 <canvas id="three-canvas"></canvas>
 
 <!-- NAV -->
@@ -543,10 +592,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="Thabang Pro.jpg" alt="Thabang Mokotedi" loading="eager">
         </div>
         <div class="photo-frame pf2">
-          <img src="Thabang Crowd.jpeg" alt="Thabang Mokotedi" loading="eager">
+          <img src="Thabang Crowd.jpeg" alt="Thabang Mokotedi" loading="lazy">
         </div>
         <div class="photo-frame pf3">
-          <img src="Thabang Grad.jpg" alt="Thabang graduating" loading="eager">
+          <img src="Thabang Grad.jpg" alt="Thabang graduating" loading="lazy">
           <div class="photo-badge">🎓 CUT — Cum Laude</div>
         </div>
       </div>
@@ -746,9 +795,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="card-thumb">
         <div class="card-thumb-multi">
           <!-- SWAP: Replace these src values with your actual Pampiri screenshot filenames -->
-          <img src="Splash Land Screen.png" alt="Pampiri Home Screen">
-          <img src="Scan Display.png" alt="Pampiri Scan">
-          <img src="Export page.png" alt="Pampiri Results">
+          <img src="Splash Land Screen.png" alt="Pampiri Home Screen" loading="lazy">
+          <img src="Scan Display.png" alt="Pampiri Scan" loading="lazy">
+          <img src="Export page.png" alt="Pampiri Results" loading="lazy">
         </div>
       </div>
       <div class="card-body">
@@ -1144,10 +1193,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://bidcalculator.co.za" target="_blank" rel="noopener">BidCalc ↗</a>
     <a href="https://nexmotiontechnologies.co.za" target="_blank" rel="noopener">Nexmotion ↗</a>
     <a href="https://github.com/ThabangMokotedI" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="#privacy-policy">Privacy Policy ↗</a>
   </div>
 </footer>
-
+</div>
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var banner = document.getElementById('cookie-consent-banner');
+  var accept = document.getElementById('cookie-accept');
+  var decline = document.getElementById('cookie-decline');
+  var privacyPage = document.getElementById('privacy-policy-page');
+
+  function setBannerVisibility() {
+    var consent = localStorage.getItem('analytics_consent');
+    if (consent === null) {
+      banner.style.display = 'flex';
+    } else {
+      banner.style.display = 'none';
+    }
+  }
+
+  function updateRoute() {
+    var active = window.location.hash === '#privacy-policy';
+    document.body.classList.toggle('privacy-active', active);
+    privacyPage.style.display = active ? 'block' : 'none';
+  }
+
+  accept.addEventListener('click', function() {
+    setAnalyticsConsent('granted');
+    banner.style.display = 'none';
+  });
+
+  decline.addEventListener('click', function() {
+    localStorage.setItem('analytics_consent', 'denied');
+    banner.style.display = 'none';
+  });
+
+  window.addEventListener('hashchange', updateRoute);
+  updateRoute();
+  setBannerVisibility();
+});
+
 // ── THREE.JS 3D BACKGROUND ──────────────────────────────────────────────────
 (function(){
   const c = document.getElementById('three-canvas');
