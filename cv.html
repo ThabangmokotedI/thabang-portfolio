@@ -149,6 +149,7 @@ body {
 .job-title { font-size: 9.5pt; font-weight: 600; color: var(--dark); }
 .job-dates { font-size: 8.4pt; font-style: italic; color: var(--muted); white-space: nowrap; }
 .job-sub   { font-size: 8.4pt; color: var(--muted); font-style: italic; margin-bottom: 2px; }
+.job-sub a { color: var(--accent); text-decoration: none; }
 
 .job-bullets { list-style: none; margin-top: 3px; }
 .job-bullets li {
@@ -232,10 +233,10 @@ body {
   Thabang Livington Mokotedi · Pretoria, South Africa
 </p>
 <div class="dl-bar">
-  <button class="dl-btn" onclick="window.print()">
+  <a class="dl-btn" href="Thabang_Mokotedi_CV.pdf" download="Thabang_Mokotedi_CV.pdf">
     <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
     Download as PDF
-  </button>
+  </a>
   <a class="dl-btn dl-btn-ghost" href="/">
     <svg viewBox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
     Back to Portfolio
@@ -325,12 +326,13 @@ body {
     <div class="section">
       <div class="section-title">Professional Summary</div>
       <p class="summary">
-        Software developer and ERP support intern gaining enterprise system experience through a client placement
-        at a major South African medical aid scheme via The Naked Scientists (TNS), Pretoria. Holds a Diploma in
-        IT (Sep 2025) and a Higher Certificate in IT Cum Laude, both from the Central University of Technology
-        (8/10 distinctions). Equity partner at NexMotion Technologies with frontend delivery across 10+ live
-        client websites. Builder of <a href="https://bidcalculator.co.za">BidCalc</a> — a deployed PWA for
-        the SA car auction market with POPIA-compliant analytics and full offline capability.
+        IT support specialist and software developer with hands-on experience in ERP system administration,
+        CRM helpdesk operations, and end-user support — gained through a client placement at a major South
+        African medical aid scheme via The Naked Scientists (TNS), Pretoria. Designed and built, as sole
+        developer, the live WhatsApp and email helpdesk platform the scheme’s member-support team works in daily.
+        Holds a Diploma in IT (Sep 2025) and a Higher Certificate in IT Cum Laude from the Central University of
+        Technology (8/10 distinctions). Equity partner at NexMotion Technologies with frontend delivery across
+        10+ live client websites.
       </p>
     </div>
 
@@ -340,17 +342,21 @@ body {
 
       <div class="job">
         <div class="job-header">
-          <span class="job-title">ERP Support Intern — The Naked Scientists (TNS)</span>
+          <span class="job-title">ERP Support Technician Intern — Polmed</span>
           <span class="job-dates">Apr 2026 – Present</span>
         </div>
-        <div class="job-sub">Client placement · Pretoria, South Africa</div>
+        <div class="job-sub">Placed via The Naked Scientists (TNS) · <a href="https://www.thenakedscientists.co.za">thenakedscientists.co.za</a> · Pretoria, South Africa</div>
         <ul class="job-bullets">
-          <li>Supporting a live enterprise ERP system across multiple functional areas — Finance, Procurement, Human Capital, Inventory and Contract management — at a major South African medical aid scheme.</li>
-          <li>Diagnosed and resolved system batch job failures; monitored and confirmed recovery through the platform's administrative tooling.</li>
-          <li>Administered user security roles across environments — processing new user setups, role change requests and onboarding sign-off documentation end-to-end.</li>
-          <li>Coordinated UAT for a medical aid mobile app across Android and Huawei devices; consolidated findings into structured issue trackers and change request reports for stakeholder distribution.</li>
-          <li>Maintained a post-go-live issue register — logging, tracking and resolving user-reported issues within SLA targets across all functional workstreams.</li>
-          <li>Applied and maintained process documentation to support triage, governance and operational continuity; detailed materials available on request to verified partners.</li>
+          <li>Built the scheme’s WhatsApp and email member helpdesk platform end-to-end, from first commit to production — now the live system the support team uses daily to receive, answer, track and report on member queries.</li>
+          <li>Delivered two-way WhatsApp messaging (media, quoted replies), email-to-ticket intake, a real-time ticket dashboard with role-based agent access, and SLA reporting with CSV/PDF export.</li>
+          <li>Automated first-line triage (instant replies to common issues, after-hours messages) and built in POPIA safeguards: member details masked by default and old tickets anonymised automatically.</li>
+          <li>First-line IT and CRM support across two tracks: ERP system administration for internal staff, and the member-facing WhatsApp helpdesk — triaging, resolving and escalating tickets within SLA targets.</li>
+          <li>Resolved member queries: registration, OTP and password issues, card downloads and wellness onboarding.</li>
+          <li>Administered Microsoft Dynamics 365 F&amp;O user security roles (new users, role changes, sign-off documentation) and delivered onboarding and refresher ERP training.</li>
+          <li>Diagnosed and resolved batch job failures; monitored recovery through the platform’s administrative tooling.</li>
+          <li>Coordinated UAT for the Polmed Connect mobile app across Android and Huawei devices; consolidated findings into issue trackers and change request reports for stakeholder distribution.</li>
+          <li>Maintained process documentation to support triage, governance and operational continuity.</li>
+          <li>Additional frontend support to the TNS product team across two confidential projects — UI modules, routing and navigation, and code audit fixes (React 18 · TypeScript · Vite · Tailwind CSS · Flutter).</li>
         </ul>
       </div>
 
@@ -375,10 +381,10 @@ body {
         </div>
         <div class="job-sub">Bloemfontein, South Africa</div>
         <ul class="job-bullets">
-          <li>WordPress website deployments and maintenance; Flutter + Firebase mobile app development for client projects.</li>
+          <li>General IT support: device setup, software installation, networking troubleshooting and on-site end-user assistance.</li>
           <li>Hardware diagnostics and repair — MacBook Pro motherboard-level liquid damage assessment, printer servicing and device configuration across Windows and macOS environments.</li>
-          <li>General IT support: device setup, software installation, networking troubleshooting and on-site user assistance across the organisation.</li>
-          <li>Built and deployed <a href="https://bidcalculator.co.za">BidCalc</a> during this period — a PWA for SA car auction buyers, POPIA-compliant GA4, fully offline via service worker, zero framework dependencies.</li>
+          <li>WordPress website deployments and maintenance; Flutter + Firebase mobile app development for client projects.</li>
+          <li>Built and deployed <a href="https://bidcalculator.co.za">BidCalc</a> using company resources and a domain procured by Kinetixes — a PWA for SA car auction buyers implementing the correct VAT model, verified against a real Aucor invoice and distinct from every existing calculator on the market. Installable on Android and iOS; fully offline via service worker; POPIA-compliant GA4 with consent gating; Google Search Console verified. Stack: Vanilla JS · HTML5/CSS3 · PWA/Service Worker · GA4 · JSON-LD.</li>
         </ul>
       </div>
 
@@ -390,8 +396,7 @@ body {
         <div class="job-sub">Freedom Square, Bloemfontein · Public primary school, Grades 1–7</div>
         <ul class="job-bullets">
           <li>Provided hands-on ICT support to educators and learners — troubleshooting devices, setting up computer labs and resolving day-to-day technical issues across Windows environments.</li>
-          <li>Developed digital literacy training materials and resources to support educators in integrating technology into classroom instruction.</li>
-          <li>Assisted with configuration and maintenance of school hardware including desktops, projectors and peripheral devices.</li>
+          <li>Developed digital literacy training materials to support educators in integrating technology into classroom instruction.</li>
         </ul>
       </div>
 
@@ -401,25 +406,9 @@ body {
           <span class="job-dates">Jun 2024 – Dec 2024</span>
         </div>
         <ul class="job-bullets">
-          <li>Built a cross-platform appointment booking system: a Flutter + Firebase mobile app syncing in real time with a C# / ASP.NET web application — actions on either platform reflected instantly on the other.</li>
+          <li>Built a cross-platform appointment booking system: Flutter + Firebase mobile app syncing in real time with a C# / ASP.NET web application.</li>
           <li>Collaborated on an internal inventory management system using C# and SQL; resolved 40+ UI/UX issues through systematic testing.</li>
           <li>Produced technical documentation (specs, user guides, architecture diagrams); participated in code reviews.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- FEATURED PROJECT -->
-    <div class="section">
-      <div class="section-title">Featured Project</div>
-      <div class="job">
-        <div class="job-header">
-          <span class="job-title"><a href="https://bidcalculator.co.za">BidCalc</a> — SA Car Auction Calculator <span style="font-weight:400;font-size:8.4pt;color:var(--muted)">(Live PWA)</span></span>
-          <span class="job-dates">2026</span>
-        </div>
-        <ul class="job-bullets">
-          <li>Implements the correct SA auction VAT model applied to the full subtotal — verified against a real Aucor invoice and distinct from every existing calculator on the market.</li>
-          <li>Installable on Android and iOS; works fully offline; POPIA-compliant GA4 with consent gating; Google Search Console verified. Auction house presets (Aucor, Bid or Buy, M&amp;C), calculation history and WhatsApp share.</li>
-          <li>Stack: Vanilla JS · HTML5/CSS3 · PWA/Service Worker · GA4 · JSON-LD · Custom domain · HTTPS · Zero framework dependencies.</li>
         </ul>
       </div>
     </div>
@@ -470,12 +459,16 @@ body {
       <div class="section-title">Technical Skills</div>
       <table class="cv-table">
         <tr>
+          <td>CRM &amp; Helpdesk</td>
+          <td>CRM helpdesk operations · Ticket management &amp; SLA tracking · Incident logging &amp; escalation · Customer support · Zoho Desk · Custom CRM platforms · End-user support · WhatsApp API</td>
+        </tr>
+        <tr>
           <td>ERP &amp; Enterprise</td>
-          <td>Enterprise ERP support · Security role management · Batch job administration · UAT coordination · Issue register management · SLA tracking · Process documentation · User onboarding</td>
+          <td>Enterprise ERP support · Security role management · Batch job administration · UAT coordination · Process documentation · User onboarding &amp; training</td>
         </tr>
         <tr>
           <td>Core Development</td>
-          <td>C# · .NET Core · ASP.NET · MVC · OOP · REST APIs · Entity Framework</td>
+          <td>C# · .NET Core · ASP.NET · MVC · OOP · REST APIs · Entity Framework · Node.js</td>
         </tr>
         <tr>
           <td>Frontend &amp; Mobile</td>
@@ -516,13 +509,13 @@ body {
       <div class="section-title">Additional</div>
       <table class="cv-table add-table">
         <tr><td>Driver's Licence</td><td>Code C1/10</td></tr>
-        <tr><td>Availability</td><td>Immediate</td></tr>
+        <tr><td>Availability</td><td>One month’s notice</td></tr>
         <tr><td>Work Authorisation</td><td>South African Citizen</td></tr>
       </table>
     </div>
 
     <div class="cv-footer">
-      Last updated: May 2026 &nbsp;|&nbsp; References available upon request
+      Last updated: October 2026 &nbsp;|&nbsp; References available upon request
     </div>
 
   </div><!-- /cv-content -->
