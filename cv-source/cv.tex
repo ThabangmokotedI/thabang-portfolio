@@ -22,6 +22,7 @@
 \usepackage{tabularx}
 \usepackage{enumitem}
 \usepackage{titlesec}
+\usepackage{needspace}
 \usepackage{fontawesome5}
 \usepackage[unicode, draft=false]{hyperref}
 \usepackage{tikz}
@@ -64,8 +65,9 @@
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
 %--- Job environment ---%
+% needspace keeps a job title from being stranded at the foot of a page
 \newenvironment{joblong}[2]{%
-  \par\noindent\textbf{#1}\hfill{\small\textit{#2}}\par\vspace{5pt}%
+  \par\needspace{5\baselineskip}\noindent\textbf{#1}\hfill{\small\textit{#2}}\par\vspace{5pt}%
   \begin{itemize}[nosep, leftmargin=1.2em, itemsep=3pt, label=--]%
 }{\end{itemize}\vspace{5pt}}
 
