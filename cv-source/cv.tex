@@ -1,0 +1,323 @@
+%-------------------------------------------------------------------------------
+% Thabang Mokotedi — CV
+% Overleaf-ready | ATS-optimised
+%
+% Cupertino icons: set Overleaf's compiler to XeLaTeX (Menu -> Compiler) and
+% upload CupertinoIcons.ttf next to this file. Compiled with pdfLaTeX instead,
+% it falls back to Font Awesome icons automatically.
+%-------------------------------------------------------------------------------
+\documentclass[a4paper,10.5pt]{article}
+
+\usepackage{iftex}
+\ifPDFTeX\else
+  \usepackage{fontspec}
+\fi
+
+\usepackage{url}
+\usepackage{parskip}
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.90]{geometry}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage[unicode, draft=false]{hyperref}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usetikzlibrary{calc}
+
+%--- Accent colour ---%
+\definecolor{accent}{RGB}{5, 150, 105}
+\definecolor{linkcolour}{RGB}{5, 150, 105}
+\hypersetup{colorlinks, breaklinks, urlcolor=linkcolour, linkcolor=linkcolour,
+  pdftitle={Thabang Livington Mokotedi - CV}, pdfauthor={Thabang Livington Mokotedi}}
+
+%--- Contact icons ---%
+% Cupertino glyphs (Flutter cupertino_icons, MIT licence) under XeLaTeX/LuaLaTeX;
+% Font Awesome under pdfLaTeX. Brand logos always come from Font Awesome.
+\ifPDFTeX
+  \newcommand{\icoPin}{{\color{accent}\faMapMarker*}}
+  \newcommand{\icoPhone}{{\color{accent}\faPhone}}
+  \newcommand{\icoMail}{{\color{accent}\faEnvelope[regular]}}
+  \newcommand{\icoGlobe}{{\color{accent}\faGlobe}}
+  \newcommand{\icoLink}{{\color{accent}\faLink}}
+\else
+  \newfontfamily\cupertino{CupertinoIcons.ttf}
+  \newcommand{\cupicon}[1]{{\color{accent}\cupertino\symbol{"#1}}}
+  \newcommand{\icoPin}{\cupicon{F455}}   % placemark
+  \newcommand{\icoPhone}{\cupicon{F4B8}} % phone
+  \newcommand{\icoMail}{\cupicon{F422}}  % envelope
+  \newcommand{\icoGlobe}{\cupicon{F68D}} % globe
+  \newcommand{\icoLink}{\cupicon{F6E5}}  % link
+\fi
+\newcommand{\icoGithub}{{\color{accent}\faGithub}}
+\newcommand{\icoLinkedin}{{\color{accent}\faLinkedin}}
+
+%--- Section formatting ---%
+\titleformat{\section}{\large\scshape\raggedright\color{accent}}{}{0em}{}[\color{accent}\titlerule]
+\titlespacing{\section}{0pt}{9pt}{5pt}
+
+%--- Column types ---%
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+%--- Job environment ---%
+\newenvironment{joblong}[2]{%
+  \par\noindent\textbf{#1}\hfill{\small\textit{#2}}\par\vspace{5pt}%
+  \begin{itemize}[nosep, leftmargin=1.2em, itemsep=3pt, label=--]%
+}{\end{itemize}\vspace{5pt}}
+
+%--- Sub-line (employer / location) ---%
+\newcommand{\jobsub}[1]{%
+  \item[]\hspace{-1.2em}{\small\color{gray}\textit{#1}}\vspace{1pt}%
+}
+
+\setlength{\parskip}{4pt}
+
+%-------------------------------------------------------------------------------
+%  GEOMETRIC BACKGROUND (draws on every page)
+%-------------------------------------------------------------------------------
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[overlay, remember picture,
+      geo/.style  = {accent, opacity=0.10, line width=0.45pt},
+      geo2/.style = {accent, opacity=0.06, line width=0.28pt},
+      dot/.style  = {accent, opacity=0.12}]
+
+    \draw[geo]  (current page.north west) --
+                ($(current page.north west)+(28mm,0)$) --
+                ($(current page.north west)+(0,-28mm)$) -- cycle;
+    \draw[geo]  (current page.north east) --
+                ($(current page.north east)+(-28mm,0)$) --
+                ($(current page.north east)+(0,-28mm)$) -- cycle;
+    \draw[geo]  (current page.south west) --
+                ($(current page.south west)+(28mm,0)$) --
+                ($(current page.south west)+(0,28mm)$) -- cycle;
+    \draw[geo]  (current page.south east) --
+                ($(current page.south east)+(-28mm,0)$) --
+                ($(current page.south east)+(0,28mm)$) -- cycle;
+
+    \draw[geo2] (current page.north west) --
+                ($(current page.north west)+(17mm,0)$) --
+                ($(current page.north west)+(0,-17mm)$) -- cycle;
+    \draw[geo2] (current page.north east) --
+                ($(current page.north east)+(-17mm,0)$) --
+                ($(current page.north east)+(0,-17mm)$) -- cycle;
+    \draw[geo2] (current page.south west) --
+                ($(current page.south west)+(17mm,0)$) --
+                ($(current page.south west)+(0,17mm)$) -- cycle;
+    \draw[geo2] (current page.south east) --
+                ($(current page.south east)+(-17mm,0)$) --
+                ($(current page.south east)+(0,17mm)$) -- cycle;
+
+    \draw[geo]  ($(current page.north west)+(2.5mm,-35mm)$) --
+                ($(current page.south west)+(2.5mm, 35mm)$);
+    \draw[geo2] ($(current page.north west)+(4mm,-42mm)$) --
+                ($(current page.south west)+(4mm, 42mm)$);
+
+    \draw[geo]  ($(current page.north east)+(-2.5mm,-35mm)$) --
+                ($(current page.south east)+(-2.5mm, 35mm)$);
+    \draw[geo2] ($(current page.north east)+(-4mm,-42mm)$) --
+                ($(current page.south east)+(-4mm, 42mm)$);
+
+    \draw[geo] ($(current page.west)+(0, 8.5mm)$) --
+               ($(current page.west)+(5mm, 5.5mm)$) --
+               ($(current page.west)+(5mm,-2.5mm)$) --
+               ($(current page.west)+(0,-5.5mm)$) --
+               ($(current page.west)+(-5mm,-2.5mm)$) --
+               ($(current page.west)+(-5mm, 5.5mm)$) -- cycle;
+    \draw[geo2]($(current page.west)+(0, 11.5mm)$) --
+               ($(current page.west)+(6.5mm, 7.5mm)$) --
+               ($(current page.west)+(6.5mm,-3.5mm)$) --
+               ($(current page.west)+(0,-7.5mm)$) --
+               ($(current page.west)+(-6.5mm,-3.5mm)$) --
+               ($(current page.west)+(-6.5mm, 7.5mm)$) -- cycle;
+
+    \draw[geo] ($(current page.east)+(0, 8.5mm)$) --
+               ($(current page.east)+(5mm, 5.5mm)$) --
+               ($(current page.east)+(5mm,-2.5mm)$) --
+               ($(current page.east)+(0,-5.5mm)$) --
+               ($(current page.east)+(-5mm,-2.5mm)$) --
+               ($(current page.east)+(-5mm, 5.5mm)$) -- cycle;
+    \draw[geo2]($(current page.east)+(0, 11.5mm)$) --
+               ($(current page.east)+(6.5mm, 7.5mm)$) --
+               ($(current page.east)+(6.5mm,-3.5mm)$) --
+               ($(current page.east)+(0,-7.5mm)$) --
+               ($(current page.east)+(-6.5mm,-3.5mm)$) --
+               ($(current page.east)+(-6.5mm, 7.5mm)$) -- cycle;
+
+    \draw[geo] ($(current page.south west)+(5.6mm, 105mm)$) ++(0,6mm) --
+               ++(5mm,-3mm) -- ++(0,-6mm) -- ++(-5mm,-3mm) --
+               ++(-5mm,3mm) -- ++(0,6mm) -- cycle;
+
+    \draw[geo] ($(current page.south east)+(-5.6mm, 105mm)$) ++(0,6mm) --
+               ++(5mm,-3mm) -- ++(0,-6mm) -- ++(-5mm,-3mm) --
+               ++(-5mm,3mm) -- ++(0,6mm) -- cycle;
+
+    \draw[geo2] ($(current page.north east)+(-37mm,0)$) --
+                ($(current page.north east)+(0,-37mm)$);
+    \draw[geo2] ($(current page.north east)+(-26mm,0)$) --
+                ($(current page.north east)+(0,-26mm)$);
+    \draw[geo2] ($(current page.north east)+(-16mm,0)$) --
+                ($(current page.north east)+(0,-16mm)$);
+
+    \draw[geo2] ($(current page.south west)+(37mm,0)$) --
+                ($(current page.south west)+(0,37mm)$);
+    \draw[geo2] ($(current page.south west)+(26mm,0)$) --
+                ($(current page.south west)+(0,26mm)$);
+    \draw[geo2] ($(current page.south west)+(16mm,0)$) --
+                ($(current page.south west)+(0,16mm)$);
+
+    \fill[dot] ($(current page.north west)+(2.5mm,-74mm)$)  circle (0.5mm);
+    \fill[dot] ($(current page.north west)+(2.5mm,-148mm)$) circle (0.5mm);
+    \fill[dot] ($(current page.north west)+(2.5mm,-222mm)$) circle (0.5mm);
+
+    \fill[dot] ($(current page.north east)+(-2.5mm,-74mm)$)  circle (0.5mm);
+    \fill[dot] ($(current page.north east)+(-2.5mm,-148mm)$) circle (0.5mm);
+    \fill[dot] ($(current page.north east)+(-2.5mm,-222mm)$) circle (0.5mm);
+
+    \draw[geo]  ($(current page.south)+(0,6mm)$) --
+                ++(-4.5mm,-6mm) -- ++(9mm,0) -- cycle;
+    \draw[geo2] ($(current page.south)+(0,10mm)$) --
+                ++(-7mm,-10mm) -- ++(14mm,0) -- cycle;
+
+    \draw[geo]  ($(current page.north)+(0,-5mm)$) --
+                ++(3.7mm,-5mm) -- ++(-3.7mm,-5mm) --
+                ++(-3.7mm,5mm) -- cycle;
+
+  \end{tikzpicture}%
+}
+
+%-------------------------------------------------------------------------------
+%  DOCUMENT
+%-------------------------------------------------------------------------------
+\begin{document}
+\pagestyle{empty}
+
+%--- HEADER ---%
+\begin{tabularx}{\linewidth}{@{} C @{}}
+  {\Huge\textbf{Thabang Livington Mokotedi}} \\[7pt]
+  \icoPin\ Pretoria, South Africa \quad
+  \icoPhone\ \href{tel:+27680853688}{068 085 3688} \quad
+  \icoMail\ \href{mailto:thabangmokotedi38@gmail.com}{thabangmokotedi38@gmail.com} \\[4pt]
+  \icoGithub\ \href{https://github.com/ThabangMokotedI}{github.com/ThabangMokotedI} \quad
+  \icoLinkedin\ \href{https://www.linkedin.com/in/thabang-mokotedi/}{linkedin.com/in/thabang-mokotedi} \\[4pt]
+  \icoGlobe\ \href{https://thabangmokotedi.netlify.app}{thabangmokotedi.netlify.app} \quad
+  \icoLink\ \href{https://bidcalculator.co.za}{bidcalculator.co.za} \quad
+  \icoLink\ \href{https://nexmotiontechnologies.co.za/projects.html}{nexmotiontechnologies.co.za}
+\end{tabularx}
+
+%--- PROFESSIONAL SUMMARY ---%
+\section{Professional Summary}
+
+\vspace{5pt}
+IT support specialist and software developer with hands-on experience in ERP system administration, CRM helpdesk operations, and end-user support — gained through a client placement at a major South African medical aid scheme via The Naked Scientists (TNS), Pretoria. Designed and built, as sole developer, the live WhatsApp and email helpdesk platform the scheme’s member-support team works in daily. Holds a Diploma in IT (Sep~2025) and a Higher Certificate in IT \textit{Cum Laude} from the Central University of Technology (8/10 distinctions). Equity partner at NexMotion Technologies with frontend delivery across 10+ live client websites.
+
+%--- WORK EXPERIENCE ---%
+\section{Work Experience}
+
+\begin{joblong}{ERP Support Technician Intern --- The Naked Scientists (TNS)}{Apr 2026 – Present}
+  \jobsub{Contracted via Masala Ramabulana Holdings (MRH) · Client placement at a major South African medical aid scheme · Pretoria}
+  \item Built the scheme’s WhatsApp and email member helpdesk platform end-to-end, from first commit to production — now the live system the support team uses daily to receive, answer, track and report on member queries.
+  \item Covered messaging, ticketing, SLA reporting and automated first-line triage, with privacy safeguards for member data in line with POPIA.
+  \item First-line IT and CRM support across two tracks: ERP system administration for internal staff, and the member-facing WhatsApp helpdesk — triaging, resolving and escalating tickets within SLA targets.
+  \item Resolved member queries on app registration, account access and onboarding.
+  \item Administered Microsoft Dynamics 365 F\&O user security roles (new users, role changes, sign-off documentation) and delivered onboarding and refresher ERP training.
+  \item Diagnosed and resolved batch job failures; monitored recovery through the platform’s administrative tooling.
+  \item Coordinated UAT for the scheme’s member mobile app across multiple device platforms; consolidated findings into issue trackers and change request reports for stakeholder distribution.
+  \item Maintained process documentation to support triage, governance and operational continuity.
+  \item Additional frontend support to the TNS product team on internal projects.
+\end{joblong}
+
+\begin{joblong}{Head of Product Engineering / Equity Partner --- NexMotion Technologies}{Mar 2025 – Present}
+  \jobsub{Remote}
+  \item Central coordination node between CTO, CEO and Head of Marketing — bridging technical execution, UX and business strategy across all active client projects.
+  \item Frontend development across 10+ live production websites for clients in legal, hospitality, construction, education and nonprofit sectors; portfolio at \href{https://nexmotiontechnologies.co.za/projects.html}{nexmotiontechnologies.co.za/projects.html}.
+  \item Led product feature scoping, visual design execution, sprint planning and client walk-in support.
+  \item Visual design lead across the Pampiri product suite — all marketing assets, UI screens and brand output.
+\end{joblong}
+
+\begin{joblong}{IT Intern (Volunteer) --- Kinetixes Engineering Solutions (Pty) Ltd}{Feb 2026 – Mar 2026}
+  \jobsub{Bloemfontein, South Africa}
+  \item General IT support: device setup, software installation, networking troubleshooting and on-site end-user assistance.
+  \item Hardware diagnostics and repair — MacBook Pro motherboard-level liquid damage assessment, printer servicing and device configuration across Windows and macOS environments.
+  \item WordPress website deployments and maintenance; Flutter + Firebase mobile app development for client projects.
+  \item Designed, built and deployed \href{https://bidcalculator.co.za}{BidCalc} for Kinetixes — a PWA for SA car auction buyers implementing the correct VAT model, verified against a real Aucor invoice and distinct from every existing calculator on the market. Installable on Android and iOS; fully offline via service worker; consent-gated GA4 analytics; Google Search Console verified. Stack: Vanilla JS · HTML5/CSS3 · PWA/Service Worker · GA4 · JSON-LD.
+\end{joblong}
+
+\begin{joblong}{Educator Assistant (E-Cadre) --- Toka Primary School}{Jun 2025 – Nov 2025}
+  \jobsub{Freedom Square, Bloemfontein · Public primary school, Grades 1--7}
+  \item Provided hands-on ICT support to educators and learners — troubleshooting devices, setting up computer labs and resolving day-to-day technical issues across Windows environments.
+  \item Developed digital literacy training materials to support educators in integrating technology into classroom instruction.
+\end{joblong}
+
+\begin{joblong}{Work Integrated Learning (Software Developer) --- Central University of Technology}{Jun 2024 – Dec 2024}
+  \item Built a cross-platform appointment booking system: Flutter + Firebase mobile app syncing in real time with a C\# / ASP.NET web application.
+  \item Collaborated on an internal inventory management system using C\# and SQL; resolved 40+ UI/UX issues through systematic testing.
+  \item Produced technical documentation (specs, user guides, architecture diagrams); participated in code reviews.
+\end{joblong}
+
+%--- EDUCATION ---%
+\section{Education}
+
+\vspace{5pt}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textbf{2022--2025} & \textbf{Diploma in Information Technology} --- Central University of Technology, Free State · \textit{Awarded Sep 2025} \\[2pt]
+                     & \small Distinctions: Software Development I · Technical Programming II B (88\%) · Internet Programming I (88\%) \\[6pt]
+  \textbf{2021--2022} & \textbf{Higher Certificate in Information Technology --- \textit{Cum Laude}} --- Central University of Technology, Free State \\[2pt]
+                     & \small Top 10\% of graduating cohort · 8/10 Distinctions · Information Systems IB (87\%) \\[6pt]
+  \textbf{2020}      & \textbf{National Senior Certificate (Matric)} --- Free State \\
+\end{tabularx}
+
+%--- CERTIFICATIONS ---%
+\section{Certifications}
+
+\vspace{5pt}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  2026       & Microsoft Dynamics 365 certification --- in progress (employer-sponsored) \\[2pt]
+  2022       & Digital Literacy --- NEMISA / Microsoft \\[2pt]
+  2022       & IT Essentials: PC Hardware \& Software --- Cisco Networking Academy \\[2pt]
+  2021--2022 & Information Systems IA \& IB --- Cisco Networking Academy \\
+\end{tabularx}
+
+%--- TECHNICAL SKILLS ---%
+\section{Technical Skills}
+
+\vspace{5pt}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textbf{CRM \& Helpdesk}    & CRM helpdesk operations · Ticket management \& SLA tracking · Incident logging \& escalation · Customer support · Zoho Desk · Custom CRM platforms · End-user support · WhatsApp API \\[3pt]
+  \textbf{ERP \& Enterprise}  & Enterprise ERP support · Security role management · Batch job administration · UAT coordination · Process documentation · User onboarding \& training \\[3pt]
+  \textbf{Core Development}   & C\# · .NET Core · ASP.NET · MVC · OOP · REST APIs · Entity Framework · Node.js \\[3pt]
+  \textbf{Frontend \& Mobile} & JavaScript · HTML · CSS · Tailwind CSS · React · Flutter · Dart · PWA / Service Worker \\[3pt]
+  \textbf{Databases}          & SQL · Oracle SQL · Firebase Firestore · Database design \& normalisation \\[3pt]
+  \textbf{Tools \& Workflow}  & GitHub · Visual Studio · Figma · Agile Scrum · WordPress · Notion · Hostinger · Linux / Ubuntu \\[3pt]
+  \textbf{Analytics \& SEO}   & Google Analytics 4 · Google Search Console · JSON-LD · Open Graph · POPIA compliance \\[3pt]
+  \textbf{Infrastructure}     & Hardware diagnostics \& repair · Device configuration · Basic server setup · Cisco Packet Tracer \\
+\end{tabularx}
+
+%--- LANGUAGES ---%
+\section{Languages}
+
+\vspace{5pt}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textbf{Sesotho}                                & Native / Mother tongue \\[2pt]
+  \textbf{English}                                & Full professional proficiency --- spoken and written \\[2pt]
+  \textbf{Setswana · isiXhosa · isiZulu · Sepedi} & Professional working proficiency --- can speak, hear and respond confidently \\[2pt]
+  \textbf{Afrikaans}                              & Passive comprehension --- responds in English or another listed language \\
+\end{tabularx}
+
+%--- ADDITIONAL ---%
+\section{Additional}
+
+\vspace{5pt}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textbf{Driver's Licence}   & Code C1/10 (includes Code B) \\[2pt]
+  \textbf{Availability}       & One week’s notice \\[2pt]
+  \textbf{Work Authorisation} & South African Citizen \\
+\end{tabularx}
+
+\vfill
+{\centering\footnotesize\color{gray} Last updated: October 2026 \quad $|$ \quad References available upon request\par}
+
+\end{document}

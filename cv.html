@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thabang Livington Mokotedi — CV</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --accent:  #059669;
+  --dark:    #0f172a;
+  --mid:     #334155;
+  --muted:   #64748b;
+  --serif:   'EB Garamond', Georgia, serif;
+  --sans:    'DM Sans', system-ui, sans-serif;
+}
+
+html { font-size: 10.5pt; }
+
+body {
+  font-family: var(--sans);
+  background: #e2f0ea;
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+
+/* ── DOWNLOAD BAR ── */
+.dl-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 0 0;
+  flex-wrap: wrap;
+}
+
+.dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 14px rgba(5,150,105,.28);
+  transition: background .15s, transform .15s;
+  text-decoration: none;
+}
+.dl-btn:hover { background: #047857; transform: translateY(-1px); }
+.dl-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+.dl-btn-ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  box-shadow: none;
+}
+.dl-btn-ghost:hover { background: var(--accent); color: #fff; }
+
+/* ── PAGE ── */
+.page {
+  background: #fff;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 20px auto 52px;
+  padding: 12mm 14mm 12mm 14mm;
+  box-shadow: 0 6px 48px rgba(5,150,105,.12), 0 2px 10px rgba(0,0,0,.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── GEOMETRIC BG ── */
+.geo-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cv-content { position: relative; z-index: 1; }
+
+/* ── HEADER ── */
+.cv-name {
+  font-family: var(--serif);
+  font-size: 27pt;
+  font-weight: 400;
+  color: var(--dark);
+  letter-spacing: -0.5px;
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 9px;
+}
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px 15px;
+  font-size: 8.4pt;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.contact-row a { color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 3px; }
+.contact-row a:hover { text-decoration: underline; }
+.ci { width: 10px; height: 10px; fill: var(--accent); flex-shrink: 0; display: inline-block; vertical-align: middle; }
+
+/* ── SECTION ── */
+.section { margin-top: 11px; }
+
+.section-title {
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid var(--accent);
+  margin-bottom: 9px;
+}
+
+.summary { font-size: 9.5pt; color: var(--mid); line-height: 1.72; }
+.summary a { color: var(--accent); text-decoration: none; }
+
+/* ── JOB ── */
+.job { margin-bottom: 9px; }
+.job:last-child { margin-bottom: 0; }
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1px 8px;
+  margin-bottom: 1px;
+}
+
+.job-title { font-size: 9.5pt; font-weight: 600; color: var(--dark); }
+.job-dates { font-size: 8.4pt; font-style: italic; color: var(--muted); white-space: nowrap; }
+.job-sub   { font-size: 8.4pt; color: var(--muted); font-style: italic; margin-bottom: 2px; }
+.job-sub a { color: var(--accent); text-decoration: none; }
+
+.job-bullets { list-style: none; margin-top: 3px; }
+.job-bullets li {
+  font-size: 8.9pt;
+  color: var(--mid);
+  padding-left: 13px;
+  position: relative;
+  line-height: 1.65;
+  margin-bottom: 2.5pt;
+}
+.job-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--accent); font-weight: 600; }
+.job-bullets li a { color: var(--accent); text-decoration: none; }
+
+/* ── EDUCATION ── */
+.edu-item { margin-bottom: 8px; }
+.edu-item:last-child { margin-bottom: 0; }
+
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1px 8px;
+}
+.edu-qual   { font-size: 9.5pt; font-weight: 600; color: var(--dark); }
+.edu-years  { font-size: 8.4pt; font-style: italic; color: var(--muted); white-space: nowrap; }
+.edu-inst   { font-size: 8.9pt; color: var(--mid); margin-top: 1px; }
+.edu-detail { font-size: 8.4pt; color: var(--muted); margin-top: 1px; font-style: italic; }
+
+/* ── TABLES ── */
+.cv-table { width: 100%; border-collapse: collapse; font-size: 8.9pt; }
+.cv-table tr { vertical-align: top; }
+.cv-table td { padding-bottom: 4px; line-height: 1.55; }
+.cv-table td:first-child { font-weight: 600; color: var(--dark); white-space: nowrap; padding-right: 14px; font-size: 8.4pt; }
+.cv-table td:last-child  { color: var(--mid); }
+
+.cert-table td:first-child { color: var(--muted); font-weight: 400; width: 58px; }
+.lang-table td:first-child { width: 172px; }
+.add-table  td:first-child { width: 140px; }
+
+/* ── FOOTER ── */
+.cv-footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 7.5pt;
+  color: #adb5bd;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 8px;
+}
+
+/* ── PRINT ── */
+@page { size: A4; margin: 12mm 13mm; }
+
+@media print {
+  html { font-size: 9.8pt; }
+  body { background: #fff; }
+  .dl-bar { display: none !important; }
+  /* the SVG stretches across all printed pages, so it lands in odd places */
+  .geo-bg { display: none; }
+  /* wide letter-spacing makes PDF text extract as "E D UCATION" in ATS parsers */
+  .section-title { letter-spacing: normal; }
+  .page {
+    margin: 0 auto;
+    padding: 0;
+    box-shadow: none;
+    width: 100%;
+    min-height: auto;
+  }
+  .section          { margin-top: 8px; }
+  .section-title    { margin-bottom: 6px; }
+  .cv-footer        { margin-top: 8px; padding-top: 5px; }
+  .job              { margin-bottom: 8px; }
+  .job-bullets li   { margin-bottom: 1px; line-height: 1.5; }
+  .summary          { line-height: 1.6; }
+  .edu-item         { margin-bottom: 5px; }
+  .cv-table td      { padding-bottom: 3px; }
+}
+
+@media (max-width: 720px) {
+  .page { width: 100%; margin: 0; padding: 18px 14px; box-shadow: none; }
+  .job-header, .edu-row { flex-direction: column; }
+  .dl-bar { padding: 16px 16px 0; }
+}
+</style>
+</head>
+<body>
+<div class="dl-bar">
+  <a class="dl-btn" href="Thabang_Mokotedi_CV.pdf" download="Thabang_Mokotedi_CV.pdf">
+    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+    Download as PDF
+  </a>
+  <a class="dl-btn dl-btn-ghost" href="/">
+    <svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Back to Portfolio
+  </a>
+</div>
+
+<div class="page">
+
+  <!-- Geometric background -->
+  <svg class="geo-bg" viewBox="0 0 595 842" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <polygon points="0,0 80,0 0,80"       fill="none" stroke="#059669" stroke-width="0.55" opacity="0.10"/>
+    <polygon points="595,0 515,0 595,80"  fill="none" stroke="#059669" stroke-width="0.55" opacity="0.10"/>
+    <polygon points="0,842 80,842 0,762"  fill="none" stroke="#059669" stroke-width="0.55" opacity="0.10"/>
+    <polygon points="595,842 515,842 595,762" fill="none" stroke="#059669" stroke-width="0.55" opacity="0.10"/>
+    <polygon points="0,0 50,0 0,50"       fill="none" stroke="#059669" stroke-width="0.35" opacity="0.07"/>
+    <polygon points="595,0 545,0 595,50"  fill="none" stroke="#059669" stroke-width="0.35" opacity="0.07"/>
+    <polygon points="0,842 50,842 0,792"  fill="none" stroke="#059669" stroke-width="0.35" opacity="0.07"/>
+    <polygon points="595,842 545,842 595,792" fill="none" stroke="#059669" stroke-width="0.35" opacity="0.07"/>
+    <line x1="7"   y1="100" x2="7"   y2="742" stroke="#059669" stroke-width="0.5"  opacity="0.08"/>
+    <line x1="11"  y1="120" x2="11"  y2="722" stroke="#059669" stroke-width="0.28" opacity="0.05"/>
+    <line x1="588" y1="100" x2="588" y2="742" stroke="#059669" stroke-width="0.5"  opacity="0.08"/>
+    <line x1="584" y1="120" x2="584" y2="722" stroke="#059669" stroke-width="0.28" opacity="0.05"/>
+    <polygon points="16,310 30,302 30,318 16,326 2,318 2,302"   fill="none" stroke="#059669" stroke-width="0.5"  opacity="0.09"/>
+    <polygon points="16,310 34,300 34,320 16,330 -2,320 -2,300" fill="none" stroke="#059669" stroke-width="0.28" opacity="0.05"/>
+    <polygon points="579,310 593,302 593,318 579,326 565,318 565,302"   fill="none" stroke="#059669" stroke-width="0.5"  opacity="0.09"/>
+    <polygon points="579,310 597,300 597,320 579,330 561,320 561,300"   fill="none" stroke="#059669" stroke-width="0.28" opacity="0.05"/>
+    <polygon points="16,580 30,572 30,588 16,596 2,588 2,572"   fill="none" stroke="#059669" stroke-width="0.5"  opacity="0.07"/>
+    <polygon points="579,580 593,572 593,588 579,596 565,588 565,572"   fill="none" stroke="#059669" stroke-width="0.5"  opacity="0.07"/>
+    <line x1="490" y1="0"  x2="595" y2="105" stroke="#059669" stroke-width="0.38" opacity="0.05"/>
+    <line x1="520" y1="0"  x2="595" y2="75"  stroke="#059669" stroke-width="0.28" opacity="0.04"/>
+    <line x1="550" y1="0"  x2="595" y2="45"  stroke="#059669" stroke-width="0.22" opacity="0.035"/>
+    <line x1="0"   y1="737" x2="105" y2="842" stroke="#059669" stroke-width="0.38" opacity="0.05"/>
+    <line x1="0"   y1="767" x2="75"  y2="842" stroke="#059669" stroke-width="0.28" opacity="0.04"/>
+    <line x1="0"   y1="797" x2="45"  y2="842" stroke="#059669" stroke-width="0.22" opacity="0.035"/>
+    <circle cx="7"   cy="210" r="1.4" fill="#059669" opacity="0.10"/>
+    <circle cx="7"   cy="420" r="1.4" fill="#059669" opacity="0.10"/>
+    <circle cx="7"   cy="630" r="1.4" fill="#059669" opacity="0.10"/>
+    <circle cx="588" cy="210" r="1.4" fill="#059669" opacity="0.10"/>
+    <circle cx="588" cy="420" r="1.4" fill="#059669" opacity="0.10"/>
+    <circle cx="588" cy="630" r="1.4" fill="#059669" opacity="0.10"/>
+    <polygon points="297.5,824 284,842 311,842" fill="none" stroke="#059669" stroke-width="0.45" opacity="0.09"/>
+    <polygon points="297.5,815 278,842 317,842" fill="none" stroke="#059669" stroke-width="0.28" opacity="0.05"/>
+    <polygon points="297.5,8 308,18 297.5,28 287,18" fill="none" stroke="#059669" stroke-width="0.45" opacity="0.09"/>
+  </svg>
+
+  <div class="cv-content">
+
+    <!-- HEADER -->
+    <h1 class="cv-name">Thabang Livington Mokotedi</h1>
+
+    <div class="contact-row">
+      <span>Pretoria, South Africa</span>
+      <a href="tel:0680853688">
+        <svg class="ci" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        068 085 3688
+      </a>
+      <a href="mailto:thabangmokotedi38@gmail.com">
+        <svg class="ci" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        thabangmokotedi38@gmail.com
+      </a>
+    </div>
+
+    <div class="contact-row">
+      <a href="https://github.com/ThabangMokotedI">
+        <svg class="ci" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+        github.com/ThabangMokotedI
+      </a>
+      <a href="https://www.linkedin.com/in/thabang-mokotedi/">
+        <svg class="ci" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        linkedin.com/in/thabang-mokotedi
+      </a>
+      <a href="https://thabangmokotedi.netlify.app">
+        <svg class="ci" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
+        thabangmokotedi.netlify.app
+      </a>
+      <a href="https://bidcalculator.co.za">
+        <svg class="ci" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+        bidcalculator.co.za
+      </a>
+      <a href="https://nexmotiontechnologies.co.za/projects.html">
+        <svg class="ci" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+        nexmotiontechnologies.co.za
+      </a>
+    </div>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <div class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary">
+        IT support specialist and software developer with hands-on experience in ERP system administration,
+        CRM helpdesk operations, and end-user support — gained through a client placement at a major South
+        African medical aid scheme via The Naked Scientists (TNS), Pretoria. Designed and built, as sole
+        developer, the live WhatsApp and email helpdesk platform the scheme’s member-support team works in daily.
+        Holds a Diploma in IT (Sep 2025) and a Higher Certificate in IT Cum Laude from the Central University of
+        Technology (8/10 distinctions). Equity partner at NexMotion Technologies with frontend delivery across
+        10+ live client websites.
+      </p>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div class="section">
+      <h2 class="section-title">Work Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="job-title">ERP Support Technician Intern — The Naked Scientists (TNS)</h3>
+          <span class="job-dates">Apr 2026 – Present</span>
+        </div>
+        <div class="job-sub">Contracted via Masala Ramabulana Holdings (MRH) · Client placement at a major South African medical aid scheme · Pretoria</div>
+        <ul class="job-bullets">
+          <li>Built the scheme’s WhatsApp and email member helpdesk platform end-to-end, from first commit to production — now the live system the support team uses daily to receive, answer, track and report on member queries.</li>
+          <li>Covered messaging, ticketing, SLA reporting and automated first-line triage, with privacy safeguards for member data in line with POPIA.</li>
+          <li>First-line IT and CRM support across two tracks: ERP system administration for internal staff, and the member-facing WhatsApp helpdesk — triaging, resolving and escalating tickets within SLA targets.</li>
+          <li>Resolved member queries on app registration, account access and onboarding.</li>
+          <li>Administered Microsoft Dynamics 365 F&amp;O user security roles (new users, role changes, sign-off documentation) and delivered onboarding and refresher ERP training.</li>
+          <li>Diagnosed and resolved batch job failures; monitored recovery through the platform’s administrative tooling.</li>
+          <li>Coordinated UAT for the scheme’s member mobile app across multiple device platforms; consolidated findings into issue trackers and change request reports for stakeholder distribution.</li>
+          <li>Maintained process documentation to support triage, governance and operational continuity.</li>
+          <li>Additional frontend support to the TNS product team on internal projects.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="job-title">Head of Product Engineering / Equity Partner — NexMotion Technologies</h3>
+          <span class="job-dates">Mar 2025 – Present</span>
+        </div>
+        <div class="job-sub">Remote</div>
+        <ul class="job-bullets">
+          <li>Central coordination node between CTO, CEO and Head of Marketing — bridging technical execution, UX and business strategy across all active client projects.</li>
+          <li>Frontend development across 10+ live production websites for clients in legal, hospitality, construction, education and nonprofit sectors; portfolio at <a href="https://nexmotiontechnologies.co.za/projects.html">nexmotiontechnologies.co.za/projects.html</a>.</li>
+          <li>Led product feature scoping, visual design execution, sprint planning and client walk-in support.</li>
+          <li>Visual design lead across the Pampiri product suite — all marketing assets, UI screens and brand output.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="job-title">IT Intern (Volunteer) — Kinetixes Engineering Solutions (Pty) Ltd</h3>
+          <span class="job-dates">Feb 2026 – Mar 2026</span>
+        </div>
+        <div class="job-sub">Bloemfontein, South Africa</div>
+        <ul class="job-bullets">
+          <li>General IT support: device setup, software installation, networking troubleshooting and on-site end-user assistance.</li>
+          <li>Hardware diagnostics and repair — MacBook Pro motherboard-level liquid damage assessment, printer servicing and device configuration across Windows and macOS environments.</li>
+          <li>WordPress website deployments and maintenance; Flutter + Firebase mobile app development for client projects.</li>
+          <li>Designed, built and deployed <a href="https://bidcalculator.co.za">BidCalc</a> for Kinetixes — a PWA for SA car auction buyers implementing the correct VAT model, verified against a real Aucor invoice and distinct from every existing calculator on the market. Installable on Android and iOS; fully offline via service worker; consent-gated GA4 analytics; Google Search Console verified. Stack: Vanilla JS · HTML5/CSS3 · PWA/Service Worker · GA4 · JSON-LD.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="job-title">Educator Assistant (E-Cadre) — Toka Primary School</h3>
+          <span class="job-dates">Jun 2025 – Nov 2025</span>
+        </div>
+        <div class="job-sub">Freedom Square, Bloemfontein · Public primary school, Grades 1–7</div>
+        <ul class="job-bullets">
+          <li>Provided hands-on ICT support to educators and learners — troubleshooting devices, setting up computer labs and resolving day-to-day technical issues across Windows environments.</li>
+          <li>Developed digital literacy training materials to support educators in integrating technology into classroom instruction.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="job-title">Work Integrated Learning (Software Developer) — Central University of Technology</h3>
+          <span class="job-dates">Jun 2024 – Dec 2024</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Built a cross-platform appointment booking system: Flutter + Firebase mobile app syncing in real time with a C# / ASP.NET web application.</li>
+          <li>Collaborated on an internal inventory management system using C# and SQL; resolved 40+ UI/UX issues through systematic testing.</li>
+          <li>Produced technical documentation (specs, user guides, architecture diagrams); participated in code reviews.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-item">
+        <div class="edu-row">
+          <h3 class="edu-qual">Diploma in Information Technology</h3>
+          <span class="edu-years">2022 – 2025</span>
+        </div>
+        <div class="edu-inst">Central University of Technology, Free State · Awarded Sep 2025</div>
+        <div class="edu-detail">Distinctions: Software Development I · Technical Programming II B (88%) · Internet Programming I (88%)</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-row">
+          <h3 class="edu-qual">Higher Certificate in Information Technology — <em>Cum Laude</em></h3>
+          <span class="edu-years">2021 – 2022</span>
+        </div>
+        <div class="edu-inst">Central University of Technology, Free State</div>
+        <div class="edu-detail">Top 10% of graduating cohort · 8/10 Distinctions · Information Systems IB (87%)</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-row">
+          <h3 class="edu-qual">National Senior Certificate (Matric)</h3>
+          <span class="edu-years">2020</span>
+        </div>
+        <div class="edu-inst">Free State</div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section">
+      <h2 class="section-title">Certifications</h2>
+      <table class="cv-table cert-table">
+        <tr><td>2026</td><td>Microsoft Dynamics 365 certification — in progress (employer-sponsored)</td></tr>
+        <tr><td>2022</td><td>Digital Literacy — NEMISA / Microsoft</td></tr>
+        <tr><td>2022</td><td>IT Essentials: PC Hardware &amp; Software — Cisco Networking Academy</td></tr>
+        <tr><td>2021–2022</td><td>Information Systems IA &amp; IB — Cisco Networking Academy</td></tr>
+      </table>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <table class="cv-table">
+        <tr>
+          <td>CRM &amp; Helpdesk</td>
+          <td>CRM helpdesk operations · Ticket management &amp; SLA tracking · Incident logging &amp; escalation · Customer support · Zoho Desk · Custom CRM platforms · End-user support · WhatsApp API</td>
+        </tr>
+        <tr>
+          <td>ERP &amp; Enterprise</td>
+          <td>Enterprise ERP support · Security role management · Batch job administration · UAT coordination · Process documentation · User onboarding &amp; training</td>
+        </tr>
+        <tr>
+          <td>Core Development</td>
+          <td>C# · .NET Core · ASP.NET · MVC · OOP · REST APIs · Entity Framework · Node.js</td>
+        </tr>
+        <tr>
+          <td>Frontend &amp; Mobile</td>
+          <td>JavaScript · HTML · CSS · Tailwind CSS · React · Flutter · Dart · PWA / Service Worker</td>
+        </tr>
+        <tr>
+          <td>Databases</td>
+          <td>SQL · Oracle SQL · Firebase Firestore · Database design &amp; normalisation</td>
+        </tr>
+        <tr>
+          <td>Tools &amp; Workflow</td>
+          <td>GitHub · Visual Studio · Figma · Agile Scrum · WordPress · Notion · Hostinger · Linux / Ubuntu</td>
+        </tr>
+        <tr>
+          <td>Analytics &amp; SEO</td>
+          <td>Google Analytics 4 · Google Search Console · JSON-LD · Open Graph · POPIA compliance</td>
+        </tr>
+        <tr>
+          <td>Infrastructure</td>
+          <td>Hardware diagnostics &amp; repair · Device configuration · Basic server setup · Cisco Packet Tracer</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div class="section">
+      <h2 class="section-title">Languages</h2>
+      <table class="cv-table lang-table">
+        <tr><td>Sesotho</td><td>Native / Mother tongue</td></tr>
+        <tr><td>English</td><td>Full professional proficiency — spoken and written</td></tr>
+        <tr><td>Setswana · isiXhosa · isiZulu · Sepedi</td><td>Professional working proficiency — can speak, hear and respond confidently</td></tr>
+        <tr><td>Afrikaans</td><td>Passive comprehension — responds in English or another listed language</td></tr>
+      </table>
+    </div>
+
+    <!-- ADDITIONAL -->
+    <div class="section">
+      <h2 class="section-title">Additional</h2>
+      <table class="cv-table add-table">
+        <tr><td>Driver's Licence</td><td>Code C1/10</td></tr>
+        <tr><td>Availability</td><td>One week’s notice</td></tr>
+        <tr><td>Work Authorisation</td><td>South African Citizen</td></tr>
+      </table>
+    </div>
+
+    <div class="cv-footer">
+      Last updated: October 2026 &nbsp;|&nbsp; References available upon request
+    </div>
+
+  </div><!-- /cv-content -->
+</div><!-- /page -->
+
+</body>
+</html>
